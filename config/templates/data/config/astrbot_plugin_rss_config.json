@@ -1,0 +1,26 @@
+{
+  "title_max_length": 30,
+  "description_max_length": 500,
+  "compose": true,
+  "t2i": false,
+  "max_items_per_poll": 3,
+  "is_hide_url": false,
+  "use_parser": true,
+  "default_rsshub_endpoint": "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}",
+  "rsshub_whitelist_sessions": [
+    "default:GroupMessage:{{AB_QQ_8}}",
+    "{{AB_QQ_6}}",
+    "{{AB_QQ_2}}",
+    "{{AB_QQ_7}}"
+  ],
+  "rsshub_access_key": "",
+  "manage_ui_enable": true,
+  "manage_ui_host": "0.0.0.0",
+  "manage_ui_port": 6190,
+  "group_subscriptions": [],
+  "pic_config": {
+    "is_read_pic": false,
+    "is_adjust_pic": false,
+    "max_pic_item": 3
+  }
+}

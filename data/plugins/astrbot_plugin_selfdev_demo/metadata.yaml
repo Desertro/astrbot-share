@@ -1,0 +1,6 @@
+name: astrbot_plugin_selfdev_demo
+desc: self_dev 插件专用的靶子：只有一条 #demo 指令，随便改
+help: '#demo'
+version: v0.1.0
+author: dsh
+repo: 

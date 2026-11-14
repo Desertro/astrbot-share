@@ -1,0 +1,60 @@
+{
+  "api_url": "{{AB_MEM_CHAT_LLM_BASE_URL}}/chat/completions",
+  "api_format": "openai",
+  "google_api_base": "",
+  "model_name": "gemini-3.1-flash-image-preview",
+  "gemini_ai_aspect_ratio": true,
+  "gpt_ai_aspect_ratio": true,
+  "gpt_image_quality": "auto",
+  "gpt_model_name": "gpt-image-2.5-flare",
+  "gpt_model_names": [
+    "gpt-image-2.5-flare",
+    "gpt-image-2.5-sunburst",
+    "gpt-image-2.5-web"
+  ],
+  "api_keys": [
+    "{{AB_SHOUBANHUA_API_KEYS_0}}"
+  ],
+  "backup_api_url": "{{AB_VISION_MEDIA_VISION_LLM_FALLBACK_BASE_URL}}/v1/chat/completions",
+  "backup_api_format": "openai",
+  "backup_google_api_base": "",
+  "backup_model_name": "",
+  "backup_gpt_model_name": "gpt-image-2.5-flare",
+  "backup_api_keys": [
+    "{{AB_SHOUBANHUA_BACKUP_API_KEYS_0}}"
+  ],
+  "third_api_url": "",
+  "third_api_format": "openai",
+  "third_google_api_base": "",
+  "third_blt_api_base": "",
+  "third_model_name": "",
+  "third_gpt_model_name": "",
+  "third_api_keys": [],
+  "backend_probe_timeout": 12,
+  "prefix": true,
+  "use_proxy": false,
+  "proxy_url": "{{AB_IMG_REV_SEARCHER_PROXIES}}",
+  "user_whitelist": [],
+  "user_blacklist": [],
+  "group_whitelist": [
+    "{{AB_QQ_2}}",
+    "{{AB_QQ_6}}",
+    "{{AB_QQ_5}}",
+    "{{AB_QQ_8}}",
+    "{{AB_QQ_4}}",
+    "{{AB_QQ_9}}",
+    "{{AB_QQ_10}}",
+    "{{AB_QQ_11}}"
+  ],
+  "group_blacklist": [],
+  "enable_user_limit": true,
+  "enable_group_limit": true,
+  "help_text": "🎨 手办化Pro插件使用帮助：\n\n📌 基础命令 (可加#也可不加)：\n手办化 [图片] - 生成标准手办化图片\nQ版化 [图片] - 生成Q版手办化图片\n痛屋化 [图片] - 生成痛屋场景图片\n痛车化 [图片] - 生成痛车场景图片\ncos化 [图片] - 生成cosplay照片\ncos自拍 [图片] - 生成cosplay自拍\n孤独的我 [图片] - 生成孤独场景图片\n贴纸化 [图片] - 生成贴纸化图片\n玉足 [图片] - 生成玉足图片\nfumo化 [图片] - 生成fumo化图片\n\n📌 数字版本：\n手办化2 [图片]\n手办化3 [图片]\n手办化4 [图片]\n手办化5 [图片]\n手办化6 [图片]\n\n📌 新增命令：\n第三视角 [图片]\n痛屋化2 [图片]\n鬼图 [图片]\n第一视角 [图片]\n\n📌 自定义提示词：\nbnn <提示词> [图片]\n\n📌 使用方式：\n1. 发送图片并使用命令\n2. 引用含有图片的消息并使用命令\n3. @某人使用命令（将使用该人的头像）\n\n📌 次数查询 (需加#)：\n#手办化查询次数 - 查询自己和本群的剩余次数\n\n📌 管理命令 (仅主人, 需加#)：\n#手办化添加key <key1> <key2>...\n#手办化key列表\n#手办化删除key <序号|all>\n#手办化增加用户次数 <QQ号> <次数>\n#手办化增加群组次数 <群号> <次数>\n分辨率：bnn1k / bnn2k / bnn4k <提示词> [图片]，也支持 bnn 2k <提示词>。普通 bnn 使用站点基础模型默认分辨率。\n快捷命令：1k / 2k / 4k <提示词> [图片]（可加#），分别生成对应分辨率。",
+  "enable_checkin": true,
+  "enable_random_checkin": false,
+  "checkin_fixed_reward": 20,
+  "checkin_random_reward_max": 9,
+  "backup_enabled": false,
+  "backup_bnn_enabled": false,
+  "gpt_backend_round_robin": false
+}

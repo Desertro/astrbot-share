@@ -1,0 +1,3 @@
+# Keep Python custom meme loaders while satisfying AstrBot's Pillow minimum.
+# The legacy renderer is covered by local meme-generation smoke tests.
+pillow==11.3.0

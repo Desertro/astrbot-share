@@ -1,0 +1,5 @@
+source: https://github.com/anyliew/meme_emoji
+head: 45fcb2e0a7f85ecd488dd6ab161d874703ef6d8d
+imported_at: 2026-06-30
+mode: copied with rsync --ignore-existing; local files are not overwritten
+

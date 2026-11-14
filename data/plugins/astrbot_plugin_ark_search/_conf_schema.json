@@ -1,0 +1,72 @@
+{
+  "api_mode": {
+    "description": "联网搜索接入模式",
+    "type": "string",
+    "default": "ark_responses",
+    "options": ["ark_responses", "feedcoop_api"],
+    "labels": ["火山方舟 Responses", "联网搜索 APIKey 直连"],
+    "hint": "ark_responses 使用 ark- 开头的方舟 Key；feedcoop_api 使用联网搜索控制台创建的 API Key。"
+  },
+  "api_key": {
+    "description": "API Key (Bearer)",
+    "type": "string",
+    "default": "",
+    "hint": "ark_responses 模式填 ark-xxxxx；feedcoop_api 模式填联网搜索控制台 API Key。"
+  },
+  "base_url": {
+    "description": "ark Responses 接口地址",
+    "type": "string",
+    "default": "{{AB_ARK_SEARCH_BASE_URL}}",
+    "hint": "若填入 .../api/v3 也会自动拼上 /responses。"
+  },
+  "feedcoop_url": {
+    "description": "联网搜索 APIKey 直连接口地址",
+    "type": "string",
+    "default": "https://open.feedcoopapi.com/search_api/web_search",
+    "hint": "火山联网搜索文档推荐的 APIKey 接入 URL。"
+  },
+  "feedcoop_search_type": {
+    "description": "联网搜索类型",
+    "type": "string",
+    "default": "web",
+    "options": ["web", "web_summary"],
+    "labels": ["web 搜索", "web 搜索总结版"],
+    "hint": "你的当前试用套餐 web 可用；web_summary 若未开通会自动回退到 web。"
+  },
+  "feedcoop_count": {
+    "description": "联网搜索返回条数",
+    "type": "int",
+    "default": 5,
+    "hint": "feedcoop_api 模式使用，建议 3-5，插件最多取 10 条。"
+  },
+  "model": {
+    "description": "ark 模型 ID",
+    "type": "string",
+    "default": "doubao-seed-2-0-mini-260215",
+    "hint": "推荐 doubao-seed-2-0-mini-260215 (便宜 + 触发 web_search 表现稳定)。"
+  },
+  "system_prompt": {
+    "description": "系统提示词（描述如何回答）",
+    "type": "text",
+    "default": "你是一个负责检索网络信息的助手。请基于 web_search 工具返回的最新信息，给出 300 字以内的中文回答。\n- 必须显式调用 web_search 工具，至少 1 次，禁止仅凭记忆作答。\n- 如果是新闻/时效问题，请明确写出时间。\n- 如果搜不到可靠结果，直接说\"未找到可靠信息\"。\n- 不要输出 Markdown 标题与代码块，纯文本，分点可用「1. 2. 3.」。\n- 在结尾用一行列出主要来源（来源：网站名 ...），不要写完整 URL。",
+    "hint": "用于约束 ark 模型如何返回搜索结果给上游聊天 LLM。"
+  },
+  "max_output_tokens": {
+    "description": "最大输出 tokens",
+    "type": "int",
+    "default": 2000,
+    "hint": "web_search 会消耗较多 reasoning tokens，建议 ≥ 2000。"
+  },
+  "timeout": {
+    "description": "单次请求超时(秒)",
+    "type": "int",
+    "default": 60,
+    "hint": "web_search 端到端通常 10-40s，给宽松一点。"
+  },
+  "enable_web_search": {
+    "description": "启用 ark 自带 web_search 工具",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后只会用模型记忆作答，不推荐。"
+  }
+}

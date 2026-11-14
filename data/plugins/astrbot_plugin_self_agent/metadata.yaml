@@ -1,0 +1,8 @@
+name: self_agent
+desc: 让爱丽丝在群里真正去跑腿：Codex 负责查文件、跑命令并回一句结论
+help: |
+  #ask <需求>   让 agent 去看/去查，回一段结论
+  例：#ask 这台机器 uptime 多少
+version: v0.3.2
+author: dsh
+repo: 

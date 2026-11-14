@@ -1,0 +1,6 @@
+name: astrbot_plugin_x_anime_push_test
+desc: 无账号聚合 X 活跃画师公开时间线、Bluesky 动漫流与 Wallhaven SFW 日榜，按新鲜度、热度、安全性和图片哈希筛选推送。
+help: 每轮只推送一张最近 48 小时内且未发送过的安全图片；没有合格新图时跳过。
+version: v0.8.3
+author: Codex
+repo: ""

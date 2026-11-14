@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "provider_id": "deepseek_v4_flash",
+  "max_steps": 6,
+  "inner_tool_timeout_sec": 420,
+  "max_task_chars": 2000,
+  "answer_max_chars": 2000,
+  "enabled_capabilities": [
+    "meme",
+    "image"
+  ],
+  "enabled_groups": [],
+  "allow_private": true,
+  "admin_uids": [
+    "{{AB_QQ_1}}"
+  ],
+  "default_image_engine": "anima",
+  "anima_enabled": true,
+  "anima_nsfw_unrestricted": true,
+  "anima_windows_python": "{{AB_CAPABILITY_AGENT_ANIMA_WINDOWS_PYTHON}}",
+  "anima_comfy_url": "{{AB_CAPABILITY_AGENT_ANIMA_COMFY_URL}}",
+  "anima_workflow": "{{AB_CAPABILITY_AGENT_ANIMA_WORKFLOW}}",
+  "anima_width": 1216,
+  "anima_height": 832,
+  "anima_timeout_sec": 1800,
+  "anima_max_queue": 0,
+  "anima_max_request_chars": 0
+}

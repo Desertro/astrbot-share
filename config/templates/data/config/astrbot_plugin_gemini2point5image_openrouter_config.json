@@ -1,0 +1,9 @@
+{
+  "gemini_api_keys": [
+    "{{AB_GEMINI2POINT5IMAGE_OPENROUTER_GEMINI_API_KEYS_0}}",
+    "{{AB_GEMINI2POINT5IMAGE_OPENROUTER_GEMINI_API_KEYS_1}}"
+  ],
+  "custom_api_base": "{{AB_FIGURINE_WORKSHOP_API_BASE_URL}}",
+  "nap_server_address": "localhost",
+  "nap_server_port": 3658
+}

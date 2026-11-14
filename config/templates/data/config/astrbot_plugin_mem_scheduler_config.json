@@ -1,0 +1,192 @@
+{
+  "enabled": true,
+  "enable_command_api": false,
+  "timezone": "Asia/Shanghai",
+  "default_dry_run": true,
+  "max_calls_per_minute": 120,
+  "llm_provider_id": "",
+  "nickname_mem_chat_only": true,
+  "nickname_cooldown_sec": 21600,
+  "nickname_min_interval_sec": 60,
+  "nickname_daily_limit": 2,
+  "notify_skip_in_group": false,
+  "nickname_max_len": 18,
+  "forbidden_words": [],
+  "seed_jobs": [
+    {
+      "id": "job-memchat-weekly-nickname-{{AB_QQ_2}}",
+      "type": "nickname_refresh",
+      "enabled": true,
+      "target_umo": "default:GroupMessage:{{AB_QQ_2}}",
+      "trigger": {
+        "kind": "interval",
+        "seconds": 600
+      },
+      "payload": {
+        "topic": "根据当前群聊氛围和爱丽丝人设，通过 mem_chat 推送接口让 LLM 每日随机更新一次自己的群名片",
+        "must_change": true,
+        "random_daily_once": true,
+        "window_start": "10:00",
+        "window_end": "23:00"
+      },
+      "options": {
+        "dry_run": false
+      },
+      "meta": {
+        "creator": "Codex",
+        "created_at": 1774418400,
+        "updated_at": 1779345073
+      }
+    },
+    {
+      "id": "job-memchat-weekly-nickname-{{AB_QQ_4}}",
+      "type": "nickname_refresh",
+      "enabled": true,
+      "target_umo": "default:GroupMessage:{{AB_QQ_4}}",
+      "trigger": {
+        "kind": "interval",
+        "seconds": 600
+      },
+      "payload": {
+        "topic": "根据当前群聊氛围和爱丽丝人设，通过 mem_chat 推送接口让 LLM 每日随机更新一次自己的群名片",
+        "must_change": true,
+        "random_daily_once": true,
+        "window_start": "10:00",
+        "window_end": "23:00"
+      },
+      "options": {
+        "dry_run": false
+      },
+      "meta": {
+        "creator": "Codex",
+        "created_at": 1779345073,
+        "updated_at": 1779345073
+      }
+    },
+    {
+      "id": "job-memchat-weekly-nickname-{{AB_QQ_5}}",
+      "type": "nickname_refresh",
+      "enabled": true,
+      "target_umo": "default:GroupMessage:{{AB_QQ_5}}",
+      "trigger": {
+        "kind": "interval",
+        "seconds": 600
+      },
+      "payload": {
+        "topic": "根据当前群聊氛围和爱丽丝人设，通过 mem_chat 推送接口让 LLM 每日随机更新一次自己的群名片",
+        "must_change": true,
+        "random_daily_once": true,
+        "window_start": "10:00",
+        "window_end": "23:00"
+      },
+      "options": {
+        "dry_run": false
+      },
+      "meta": {
+        "creator": "Codex",
+        "created_at": 1779345073,
+        "updated_at": 1779345073
+      }
+    },
+    {
+      "id": "job-memchat-weekly-nickname-{{AB_QQ_6}}",
+      "type": "nickname_refresh",
+      "enabled": true,
+      "target_umo": "default:GroupMessage:{{AB_QQ_6}}",
+      "trigger": {
+        "kind": "interval",
+        "seconds": 600
+      },
+      "payload": {
+        "topic": "根据当前群聊氛围和爱丽丝人设，通过 mem_chat 推送接口让 LLM 每日随机更新一次自己的群名片",
+        "must_change": true,
+        "random_daily_once": true,
+        "window_start": "10:00",
+        "window_end": "23:00"
+      },
+      "options": {
+        "dry_run": false
+      },
+      "meta": {
+        "creator": "Codex",
+        "created_at": 1779345073,
+        "updated_at": 1779345073
+      }
+    },
+    {
+      "id": "job-memchat-weekly-nickname-{{AB_QQ_7}}",
+      "type": "nickname_refresh",
+      "enabled": true,
+      "target_umo": "default:GroupMessage:{{AB_QQ_7}}",
+      "trigger": {
+        "kind": "interval",
+        "seconds": 600
+      },
+      "payload": {
+        "topic": "根据当前群聊氛围和爱丽丝人设，通过 mem_chat 推送接口让 LLM 每日随机更新一次自己的群名片",
+        "must_change": true,
+        "random_daily_once": true,
+        "window_start": "10:00",
+        "window_end": "23:00"
+      },
+      "options": {
+        "dry_run": false
+      },
+      "meta": {
+        "creator": "Codex",
+        "created_at": 1779345073,
+        "updated_at": 1779345073
+      }
+    },
+    {
+      "id": "job-memchat-weekly-nickname-{{AB_QQ_8}}",
+      "type": "nickname_refresh",
+      "enabled": true,
+      "target_umo": "default:GroupMessage:{{AB_QQ_8}}",
+      "trigger": {
+        "kind": "interval",
+        "seconds": 600
+      },
+      "payload": {
+        "topic": "根据当前群聊氛围和爱丽丝人设，通过 mem_chat 推送接口让 LLM 每日随机更新一次自己的群名片",
+        "must_change": true,
+        "random_daily_once": true,
+        "window_start": "10:00",
+        "window_end": "23:00"
+      },
+      "options": {
+        "dry_run": false
+      },
+      "meta": {
+        "creator": "Codex",
+        "created_at": 1779345073,
+        "updated_at": 1779345073
+      }
+    },
+    {
+      "id": "job-memchat-weekly-nickname-{{AB_QQ_9}}",
+      "type": "nickname_refresh",
+      "enabled": true,
+      "target_umo": "default:GroupMessage:{{AB_QQ_9}}",
+      "trigger": {
+        "kind": "interval",
+        "seconds": 600
+      },
+      "payload": {
+        "topic": "根据当前群聊氛围和爱丽丝人设，通过 mem_chat 推送接口让 LLM 每日随机更新一次自己的群名片",
+        "must_change": true,
+        "random_daily_once": true,
+        "window_start": "10:00",
+        "window_end": "23:00"
+      },
+      "options": {
+        "dry_run": false
+      },
+      "meta": {
+        "creator": "Codex",
+        "created_at": 1779345073,
+        "updated_at": 1779345073
+      }
+    }
+  ]
+}

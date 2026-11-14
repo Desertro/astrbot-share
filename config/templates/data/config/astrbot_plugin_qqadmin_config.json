@@ -1,0 +1,72 @@
+{
+  "divided_manage": false,
+  "default": {
+    "join_switch": false,
+    "join_min_level": 8,
+    "join_max_time": 3,
+    "join_accept_words": [
+      "白词1",
+      "白词2"
+    ],
+    "join_reject_words": [
+      "黑词1",
+      "黑词2"
+    ],
+    "join_no_match_reject": false,
+    "reject_word_block": false,
+    "block_ids": [],
+    "join_welcome": "",
+    "join_ban_time": 0,
+    "leave_notify": false,
+    "leave_block": false,
+    "builtin_ban": false,
+    "custom_ban_words": [],
+    "word_ban_time": 0,
+    "spamming_ban_time": 0
+  },
+  "admin_audit": false,
+  "random_ban_time": "30~60",
+  "vote_ban": {
+    "ttl": 120,
+    "threshold": 3
+  },
+  "llm_get_msg_count": 10,
+  "level_threshold": 50,
+  "perms": {
+    "set_group_ban": "高等级成员",
+    "set_group_ban_me": "成员",
+    "cancel_group_ban": "高等级成员",
+    "whole_ban": "管理员",
+    "set_group_card": "高等级成员",
+    "set_group_card_me": "成员",
+    "set_group_special_title": "高等级成员",
+    "set_group_special_title_me": "成员",
+    "set_group_kick": "管理员",
+    "set_group_block": "管理员",
+    "admin": "群主",
+    "essence": "成员",
+    "get_essence_msg_list": "成员",
+    "delete_msg": "成员",
+    "send_group_notice": "管理员",
+    "get_group_notice": "成员",
+    "set_group_portrait": "管理员",
+    "set_group_name": "管理员",
+    "word_ban": "管理员",
+    "handle_builtin_ban_words": "管理员",
+    "vote": "成员",
+    "curfew": "管理员",
+    "join": "管理员",
+    "approve": "高等级成员",
+    "welcome": "管理员",
+    "leave": "管理员",
+    "get_group_member_list": "成员",
+    "clear_group_member": "管理员",
+    "upload_group_file": "成员",
+    "delete_group_file": "管理员",
+    "view_group_file": "成员",
+    "ai_set_card": "群主",
+    "ai_set_title": "成员",
+    "set_config": "管理员",
+    "reset_config": "管理员"
+  }
+}

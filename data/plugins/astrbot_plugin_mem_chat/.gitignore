@@ -1,0 +1,67 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+
+# Data and Databases
+mem_chat_embeddings.db
+mem_chat_embeddings.db-shm
+mem_chat_embeddings.db-wal
+faiss/
+knowledge/
+temp/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Runtime memory / vector indexes
+mem_chat.db
+mem_chat.db-*
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+faiss/
+knowledge/
+temp/
+data/
+logs/
+
+# Local backups and patch debris
+.backup-*/
+*.bak
+*.bak-*
+*.bak.*
+*.empty_*
+*.orig
+*.rej
+
+# Local secrets
+.env
+.env.*
+*.pem
+*.key
+*.bak_*
+
+# Local audit outputs and affinity backups
+media_caption_backfill_*.json
+mem_chat_affinity_backup_*.json
+
+# Persona RAG source corpora are versioned; generated indexes remain local.
+!persona_rag/
+!persona_rag/*.md
+!persona_rag/*.txt
+
+# Public meme reference knowledge is versioned separately from local knowledge.
+!knowledge/
+knowledge/*
+!knowledge/meme_penguin_deepseek.md

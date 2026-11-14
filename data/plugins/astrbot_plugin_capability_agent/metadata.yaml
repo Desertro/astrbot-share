@@ -1,0 +1,7 @@
+name: astrbot_plugin_capability_agent
+desc: Aris的插件执行代理，按需调度本地 Anima、memelite 表情包与手办化 AI 生图能力
+help: |
+  #插件代理状态  查看当前启用能力和已注册动作（仅管理员）
+version: v0.2.0
+author: dsh
+repo:

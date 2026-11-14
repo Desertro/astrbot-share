@@ -1,0 +1,77 @@
+{
+  "proxies": "{{AB_IMG_REV_SEARCHER_PROXIES}}",
+  "auto_send_text_results": false,
+  "timeout_settings": {
+    "search_params_timeout": 30,
+    "text_confirm_timeout": 30
+  },
+  "keyword": {
+    "trigger_keywords": [
+      "以图搜图"
+    ],
+    "engine_keywords": {
+      "animetrace": "a",
+      "baidu": "b1",
+      "bing": "b2",
+      "copyseeker": "c",
+      "ehentai": "e",
+      "google": "g",
+      "saucenao": "s",
+      "tineye": "t"
+    }
+  },
+  "available_apis": {
+    "animetrace": true,
+    "baidu": true,
+    "bing": true,
+    "copyseeker": false,
+    "ehentai": true,
+    "google": true,
+    "saucenao": true,
+    "tineye": true
+  },
+  "default_params": {
+    "animetrace": {
+      "model": "full_game_model_kira",
+      "is_multi": 0,
+      "ai_detect": 0
+    },
+    "ehentai": {
+      "is_ex": false,
+      "covers": false,
+      "similar": true,
+      "exp": false
+    },
+    "google": {
+      "search_type": "exact_matches",
+      "q": "",
+      "hl": "en",
+      "country": "HK",
+      "max_results": 50
+    },
+    "saucenao": {
+      "api_key": "{{AB_IMG_REV_SEARCHER_DEFAULT_PARAMS_SAUCENAO_API_KEY}}",
+      "hide": 3,
+      "numres": 5,
+      "minsim": 30,
+      "output_type": 2
+    },
+    "tineye": {
+      "show_unavailable_domains": false,
+      "domain": "",
+      "tags": "",
+      "sort": "score",
+      "order": "desc"
+    }
+  },
+  "default_cookies": {
+    "ehentai": "",
+    "google": ""
+  },
+  "auto_google_cookie": {
+    "enabled": true,
+    "use_remote": false,
+    "remote_addr": "",
+    "update_interval": 43200
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "forum_id": 171,
+  "rate_limit_rps": 0.5,
+  "embedding_rate_limit_rps": 0.5,
+  "pages_per_hour": 2,
+  "max_threads_per_hour": 50,
+  "daily_digest_hour": 3,
+  "confirm_token": "{{AB_COLG_KNOWLEDGE_CONFIRM_TOKEN}}",
+  "max_thread_age_days": 3,
+  "crawl_interval_sec": 3600,
+  "push_enabled": true,
+  "push_interval_sec": 7200,
+  "push_once_per_day": false,
+  "push_start_hour_bj": 8,
+  "push_snapshot_enabled": true,
+  "snapshot_width": 800,
+  "snapshot_mode": "browser",
+  "snapshot_height": 900,
+  "snapshot_wait_sec": 1.5,
+  "snapshot_timeout_sec": 12,
+  "snapshot_mshots_poll_attempts": 6,
+  "snapshot_mshots_poll_interval_sec": 5,
+  "snapshot_full_page": true,
+  "snapshot_user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/121.0 Safari/537.36",
+  "group_whitelist": [
+    "{{AB_QQ_2}}"
+  ]
+}

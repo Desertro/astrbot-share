@@ -1,0 +1,321 @@
+{
+  "api_url": {
+    "description": "内置的 API 的 URL 地址",
+    "type": "string",
+    "hint": "云端图片后端请求地址；BLT/柏拉图后端已禁用，请勿填写 api.bltcy.ai",
+    "default": ""
+  },
+  "api_format": {
+    "description": "API 载荷格式",
+    "type": "string",
+    "default": "openai",
+    "options": [
+      "openai",
+      "google"
+    ],
+    "labels": [
+      "OpenAI格式",
+      "Google Gemini格式"
+    ],
+    "hint": "选择与目标平台匹配的请求格式"
+  },
+  "google_api_base": {
+    "description": "Google API Base URL",
+    "type": "string",
+    "hint": "Google GenerateContent 接口基础地址，例如 {{AB_FIGURINE_WORKSHOP_API_BASE_URL}} 或你的转发服务域名",
+    "default": "{{AB_FIGURINE_WORKSHOP_API_BASE_URL}}"
+  },
+  "model_name": {
+    "description": "主后端 bnn 默认模型名称",
+    "type": "string",
+    "hint": "bnn 默认使用这个模型；通过 '手办化模型切换 <模型名>' 修改并持久化",
+    "default": "nano-banana"
+  },
+  "gemini_ai_aspect_ratio": {
+    "description": "Gemini 纯文生图长宽比由 AI 自动判断",
+    "type": "bool",
+    "hint": "开启后，不带参考图时不再强制 1:1，由模型按画面内容选择比例；带参考图时仍优先保持参考图比例。",
+    "default": true
+  },
+  "gpt_ai_aspect_ratio": {
+    "description": "GPT 生图长宽比由 AI 自动判断",
+    "type": "bool",
+    "hint": "开启后发送 size=auto，由 GPT 图像模型按画面内容决定比例；关闭则固定 1024x1024。",
+    "default": true
+  },
+  "gpt_image_quality": {
+    "description": "GPT 图像质量",
+    "type": "string",
+    "default": "auto",
+    "options": [
+      "auto",
+      "low",
+      "medium",
+      "high"
+    ],
+    "labels": [
+      "自动",
+      "低",
+      "中",
+      "高"
+    ],
+    "hint": "对应 gpt-image 的 quality 参数，不是模型的思考强度。当前 Moyuu 接口支持 auto/low/medium/high；建议自动。"
+  },
+  "gpt_model_name": {
+    "description": "主后端 gpt 默认模型名称",
+    "type": "string",
+    "hint": "gpt 命令默认使用的模型；无图文生图，有图图生图",
+    "default": "gpt-image-2.5-flare"
+  },
+  "gpt_model_names": {
+    "description": "主后端 GPT 模型轮询列表",
+    "type": "list",
+    "hint": "按列表顺序依次轮询；失败时继续尝试后续模型。留空则只使用 gpt_model_name。",
+    "items": {
+      "type": "string",
+      "description": "GPT 模型名称"
+    },
+    "default": [
+      "gpt-image-2.5-flare",
+      "gpt-image-2.5-sunburst",
+      "gpt-image-2.5-web"
+    ]
+  },
+  "api_keys": {
+    "description": "API 密钥列表",
+    "type": "list",
+    "hint": "主后端 API 密钥列表。插件会按顺序探活并优先使用第一个可用 Key。",
+    "items": {
+      "type": "string",
+      "description": "API 密钥"
+    },
+    "default": []
+  },
+  "backup_api_url": {
+    "description": "备后端 API URL",
+    "type": "string",
+    "hint": "当主后端探活失败或调用失败时，自动切换到这里",
+    "default": ""
+  },
+  "backup_api_format": {
+    "description": "备后端 API 载荷格式",
+    "type": "string",
+    "default": "google",
+    "options": [
+      "openai",
+      "google"
+    ],
+    "labels": [
+      "OpenAI格式",
+      "Google Gemini格式"
+    ],
+    "hint": "备后端的请求格式"
+  },
+  "backup_google_api_base": {
+    "description": "备后端 Google API Base URL",
+    "type": "string",
+    "hint": "当备后端使用 Google 格式时生效",
+    "default": ""
+  },
+  "backup_model_name": {
+    "description": "备后端 bnn 默认模型名称",
+    "type": "string",
+    "hint": "主后端不可用时，bnn 默认切换到这里的模型",
+    "default": ""
+  },
+  "backup_gpt_model_name": {
+    "description": "备后端 gpt 默认模型名称",
+    "type": "string",
+    "hint": "主后端不可用时，gpt 默认切换到这里的模型",
+    "default": ""
+  },
+  "backup_api_keys": {
+    "description": "备后端 API 密钥列表",
+    "type": "list",
+    "hint": "主后端不可用时，插件会按顺序探活并使用这里的 Key",
+    "items": {
+      "type": "string",
+      "description": "备后端 API 密钥"
+    },
+    "default": []
+  },
+  "third_api_url": {
+    "description": "第三后端 API URL",
+    "type": "string",
+    "hint": "当前两个后端都失败时，再切换到这里",
+    "default": ""
+  },
+  "third_api_format": {
+    "description": "第三后端 API 载荷格式",
+    "type": "string",
+    "default": "openai",
+    "options": [
+      "openai",
+      "google"
+    ],
+    "labels": [
+      "OpenAI格式",
+      "Google Gemini格式"
+    ],
+    "hint": "第三后端的请求格式"
+  },
+  "third_google_api_base": {
+    "description": "第三后端 Google API Base URL",
+    "type": "string",
+    "hint": "当第三后端使用 Google 格式时生效",
+    "default": ""
+  },
+  "third_blt_api_base": {
+    "description": "第三后端 OpenAI Base URL",
+    "type": "string",
+    "hint": "可选。用于显式指定第三后端的 OpenAI 基础地址；BLT/柏拉图后端已禁用",
+    "default": ""
+  },
+  "third_model_name": {
+    "description": "第三后端 bnn 默认模型名称",
+    "type": "string",
+    "hint": "第三后端默认模型名称",
+    "default": ""
+  },
+  "third_gpt_model_name": {
+    "description": "第三后端 gpt 默认模型名称",
+    "type": "string",
+    "hint": "当前两个后端都不可用时，gpt 命令再切换到这里的模型",
+    "default": ""
+  },
+  "third_api_keys": {
+    "description": "第三后端 API 密钥列表",
+    "type": "list",
+    "hint": "前两个后端都不可用时，插件会按顺序探活并使用这里的 Key",
+    "items": {
+      "type": "string",
+      "description": "第三后端 API 密钥"
+    },
+    "default": []
+  },
+  "backend_probe_timeout": {
+    "description": "后端探活超时（秒）",
+    "type": "int",
+    "hint": "每次生成前会先做一次连通性测试，超过此时间未响应则视为失败",
+    "default": 12
+  },
+  "prefix": {
+    "description": "【重要】是否要求指令必须带前缀",
+    "type": "bool",
+    "hint": "推荐开启。开启后，指令需要前缀（如 '#'）或 @机器人 才能触发，可避免日常聊天误触。",
+    "default": true
+  },
+  "use_proxy": {
+    "description": "是否启用网络代理",
+    "type": "bool",
+    "hint": "如果你的服务器无法直接访问 API 地址，请开启此项",
+    "default": false
+  },
+  "proxy_url": {
+    "description": "网络代理地址",
+    "type": "string",
+    "hint": "格式为 http://user:pass@host:port, 例如 {{AB_IMG_REV_SEARCHER_PROXIES}}",
+    "default": "{{AB_IMG_REV_SEARCHER_PROXIES}}"
+  },
+  "user_whitelist": {
+    "description": "【权限】用户白名单",
+    "type": "list",
+    "hint": "留空则对所有用户开放。填写后，只有在此列表中的用户才能使用本插件功能（管理员除外）。",
+    "items": {
+      "type": "string",
+      "description": "用户QQ号"
+    },
+    "default": []
+  },
+  "user_blacklist": {
+    "description": "【权限】用户黑名单",
+    "type": "list",
+    "hint": "黑名单优先级最高。在此列表中的用户将无法使用本插件功能（管理员除外）。",
+    "items": {
+      "type": "string",
+      "description": "用户QQ号"
+    },
+    "default": []
+  },
+  "group_whitelist": {
+    "description": "【权限】群聊白名单",
+    "type": "list",
+    "hint": "留空则在所有群聊中可用。填写后，只有在此列表中的群聊才能使用本插件功能。",
+    "items": {
+      "type": "string",
+      "description": "群号"
+    },
+    "default": []
+  },
+  "group_blacklist": {
+    "description": "【权限】群聊黑名单",
+    "type": "list",
+    "hint": "黑名单优先级最高。在此列表中的群聊将无法使用本插件功能。",
+    "items": {
+      "type": "string",
+      "description": "群号"
+    },
+    "default": []
+  },
+  "enable_user_limit": {
+    "description": "【次数限制】是否启用【用户】次数限制",
+    "type": "bool",
+    "hint": "开启后，将根据用户的QQ号独立计算和限制使用次数。",
+    "default": true
+  },
+  "enable_group_limit": {
+    "description": "【次数限制】是否启用【群组】次数限制",
+    "type": "bool",
+    "hint": "开启后，将根据群号计算和限制群内总的使用次数。",
+    "default": false
+  },
+  "help_text": {
+    "description": "使用 #手办化帮助 指令时显示的文本",
+    "type": "text",
+    "editor_mode": true,
+    "editor_language": "markdown",
+    "default": "🎨 手办化Pro插件使用帮助：\n\n📌 基础命令 (可加#也可不加)：\n手办化 [图片] - 生成标准手办化图片\nQ版化 [图片] - 生成Q版手办化图片\n痛屋化 [图片] - 生成痛屋场景图片\n痛车化 [图片] - 生成痛车场景图片\ncos化 [图片] - 生成cosplay照片\ncos自拍 [图片] - 生成cosplay自拍\n孤独的我 [图片] - 生成孤独场景图片\n贴纸化 [图片] - 生成贴纸化图片\n玉足 [图片] - 生成玉足图片\nfumo化 [图片] - 生成fumo化图片\n\n📌 数字版本：\n手办化2 [图片]\n手办化3 [图片]\n手办化4 [图片]\n手办化5 [图片]\n手办化6 [图片]\n\n📌 新增命令：\n第三视角 [图片]\n痛屋化2 [图片]\n鬼图 [图片]\n第一视角 [图片]\n\n📌 自定义提示词：\nbnn <提示词> [图片]\n\n📌 使用方式：\n1. 发送图片并使用命令\n2. 引用含有图片的消息并使用命令\n3. @某人使用命令（将使用该人的头像）\n\n📌 次数查询 (需加#)：\n#手办化查询次数 - 查询自己和本群的剩余次数\n\n📌 管理命令 (仅主人, 需加#)：\n#手办化添加key <key1> <key2>...\n#手办化key列表\n#手办化删除key <序号|all>\n#手办化增加用户次数 <QQ号> <次数>\n#手办化增加群组次数 <群号> <次数>"
+  },
+  "enable_checkin": {
+    "description": "【签到系统】是否开启每日签到功能",
+    "type": "bool",
+    "hint": "开启后，用户可使用 #手办化签到 命令获取个人次数。",
+    "default": false
+  },
+  "enable_random_checkin": {
+    "description": "【签到系统】是否开启随机签到奖励",
+    "type": "bool",
+    "hint": "开启后，签到奖励为1到设置的最大值之间的随机数。关闭则使用下方的固定奖励值。",
+    "default": false
+  },
+  "checkin_fixed_reward": {
+    "description": "【签到系统】固定签到奖励次数",
+    "type": "int",
+    "hint": "当“随机签到奖励”关闭时，用户每次签到获得的固定次数。",
+    "default": 3
+  },
+  "checkin_random_reward_max": {
+    "description": "【签到系统】随机签到奖励最大值",
+    "type": "int",
+    "hint": "当“随机签到奖励”开启时，用户签到可获得的最高次数（最低为1）。",
+    "default": 5
+  },
+  "backup_enabled": {
+    "description": "启用备用生图站点",
+    "type": "bool",
+    "default": true,
+    "hint": "可保留备用凭据，站点恢复可用前先关闭。"
+  },
+  "backup_bnn_enabled": {
+    "description": "备用站参与 bnn / Gemini 生图",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后，备用站只参与 gpt 生图，bnn、1K/2K/4K 和其他 Gemini 预设不会调用该站。"
+  },
+  "gpt_backend_round_robin": {
+    "description": "GPT 生图按站点轮询",
+    "type": "bool",
+    "default": false,
+    "hint": "每个 gpt 请求轮流选择一个启用站点作为首选，失败再尝试其余站点。关闭时保持固定主备顺序。"
+  }
+}

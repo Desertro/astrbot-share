@@ -1,0 +1,6 @@
+name: astrbot_plugin_doro_today 
+desc: 今天doro是什么结局？
+help: 发送命令dorotoday，查看今日今天doro结局 
+version: v1.0.13 
+author: Futureppo
+repo: https://github.com/Futureppo/astrbot_plugin_doro_today 

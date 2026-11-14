@@ -1,0 +1,8 @@
+{
+  "provider_id": {
+    "description": "DeepSeek 官方提供商 ID",
+    "type": "string",
+    "default": "",
+    "hint": "复用 AstrBot 已配置的 api.deepseek.com 提供商密钥，无需重复填写。"
+  }
+}

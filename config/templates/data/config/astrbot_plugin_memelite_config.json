@@ -1,0 +1,10 @@
+{
+  "need_prefix": true,
+  "extra_prefix": "#",
+  "fuzzy_match": false,
+  "is_compress_image": true,
+  "is_check_resources": true,
+  "meme_timeout": 15,
+  "memes_disabled_list": [],
+  "custom_meme_dirs": []
+}

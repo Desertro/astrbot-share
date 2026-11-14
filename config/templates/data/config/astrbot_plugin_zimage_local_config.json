@@ -1,0 +1,19 @@
+{
+  "local_zimage_url": "{{AB_ZIMAGE_LOCAL_LOCAL_ZIMAGE_URL}}",
+  "request_timeout_seconds": 0,
+  "default_width": 512,
+  "default_height": 512,
+  "default_steps": 4,
+  "guidance_scale": 0.0,
+  "img2img_strength": 0.45,
+  "img2img_steps": 4,
+  "img2img_max_side": 0,
+  "max_prompt_chars": 0,
+  "allow_sender_avatar_fallback": false,
+  "max_concurrency": 0,
+  "enable_rate_limit": false,
+  "user_rpm": 0,
+  "global_rpm": 0,
+  "user_cooldown_seconds": 0,
+  "admin_bypass_limit": true
+}

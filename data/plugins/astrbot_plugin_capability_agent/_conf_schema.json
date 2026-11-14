@@ -1,0 +1,121 @@
+{
+  "enabled": {
+    "description": "启用插件代理并向Aris注册 plugin_agent 工具",
+    "type": "bool",
+    "default": true
+  },
+  "provider_id": {
+    "description": "子代理使用的 LLM Provider ID；留空则使用当前聊天 Provider",
+    "type": "string",
+    "default": ""
+  },
+  "max_steps": {
+    "description": "子代理最多工具循环步数（建议 4～8）",
+    "type": "int",
+    "default": 6
+  },
+  "inner_tool_timeout_sec": {
+    "description": "子代理内部单次工具超时秒数（生图需要较长超时）",
+    "type": "int",
+    "default": 420
+  },
+  "max_task_chars": {
+    "description": "传给子代理的任务最大字符数",
+    "type": "int",
+    "default": 2000
+  },
+  "answer_max_chars": {
+    "description": "子代理返回给Aris的最大字符数",
+    "type": "int",
+    "default": 600
+  },
+  "enabled_capabilities": {
+    "description": "启用的能力域；后续新增插件时在这里追加 capability 名称",
+    "type": "list",
+    "items": {
+      "type": "string"
+    },
+    "default": [
+      "meme",
+      "image"
+    ]
+  },
+  "enabled_groups": {
+    "description": "允许使用插件代理的群号；留空表示所有群",
+    "type": "list",
+    "items": {
+      "type": "string"
+    },
+    "default": []
+  },
+  "allow_private": {
+    "description": "是否允许私聊调用插件代理",
+    "type": "bool",
+    "default": true
+  },
+  "admin_uids": {
+    "description": "允许执行禁用/启用 meme 等管理动作的 QQ 号",
+    "type": "list",
+    "items": {
+      "type": "string"
+    },
+    "default": [
+      "{{AB_QQ_1}}"
+    ]
+  },
+  "default_image_engine": {
+    "description": "未指定生图引擎时使用；参考图编辑仍需 gpt/bnn",
+    "type": "string",
+    "default": "gpt"
+  },
+  "anima_enabled": {
+    "description": "启用本地 Anima 文生图",
+    "type": "bool",
+    "default": false
+  },
+  "anima_nsfw_unrestricted": {
+    "description": "已废弃：内容校验已移除，此开关不再生效",
+    "type": "bool",
+    "default": false
+  },
+  "anima_windows_python": {
+    "description": "WSL 可执行的 Windows Python 路径",
+    "type": "string",
+    "default": ""
+  },
+  "anima_comfy_url": {
+    "description": "Windows 本机 ComfyUI 地址，仅支持 loopback",
+    "type": "string",
+    "default": "{{AB_CAPABILITY_AGENT_ANIMA_COMFY_URL}}"
+  },
+  "anima_workflow": {
+    "description": "Windows 可读取的原版 Anima API 工作流路径",
+    "type": "string",
+    "default": ""
+  },
+  "anima_width": {
+    "description": "默认画幅宽度（64-8192，支持任意像素）",
+    "type": "int",
+    "default": 1216
+  },
+  "anima_height": {
+    "description": "默认画幅高度（64-8192，支持任意像素）",
+    "type": "int",
+    "default": 832
+  },
+  "anima_timeout_sec": {
+    "description": "ComfyUI 执行超时秒数（不设上限）",
+    "type": "int",
+    "default": 1800
+  },
+  "anima_max_queue": {
+    "description": "ComfyUI 队列深度上限，0 = 不拒绝新任务",
+    "type": "int",
+    "default": 0
+  },
+  "anima_max_request_chars": {
+    "description": "绘图要求字符上限，0 = 不限制",
+    "type": "int",
+    "default": 0
+  }
+}

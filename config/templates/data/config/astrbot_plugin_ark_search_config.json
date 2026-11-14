@@ -1,0 +1,13 @@
+{
+  "api_mode": "ark_responses",
+  "api_key": "{{AB_ARK_SEARCH_API_KEY}}",
+  "base_url": "{{AB_ARK_SEARCH_BASE_URL}}",
+  "feedcoop_url": "https://open.feedcoopapi.com/search_api/web_search",
+  "feedcoop_search_type": "web",
+  "feedcoop_count": 5,
+  "model": "doubao-seed-2-0-mini-260215",
+  "system_prompt": "你是一个负责检索网络信息的助手。请基于 web_search 工具返回的最新信息，给出 300 字以内的中文回答。\n- 必须显式调用 web_search 工具，至少 1 次；通常只搜索 1 次，搜索词要具体。\n- 不要长篇推理，不要反复自我纠结；工具返回后立即整理答案。\n- 如果是新闻/时效问题，请明确写出时间。\n- 如果搜不到可靠结果，直接说\"未找到可靠信息\"。\n- 不要输出 Markdown 标题与代码块，纯文本，分点可用「1. 2. 3.」。\n- 在结尾用一行列出主要来源（来源：网站名 ...），不要写完整 URL。",
+  "max_output_tokens": 8000,
+  "timeout": 60,
+  "enable_web_search": false
+}

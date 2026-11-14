@@ -1,0 +1,87 @@
+{
+  "local_zimage_url": {
+    "description": "本地 z-image 服务地址",
+    "type": "string",
+    "default": "{{AB_ZIMAGE_LOCAL_LOCAL_ZIMAGE_URL}}"
+  },
+  "request_timeout_seconds": {
+    "description": "请求超时时间（秒），0 = 不设超时",
+    "type": "int",
+    "default": 0
+  },
+  "default_width": {
+    "description": "默认输出宽度",
+    "type": "int",
+    "default": 512
+  },
+  "default_height": {
+    "description": "默认输出高度",
+    "type": "int",
+    "default": 512
+  },
+  "default_steps": {
+    "description": "默认推理步数",
+    "type": "int",
+    "default": 4
+  },
+  "guidance_scale": {
+    "description": "引导系数",
+    "type": "float",
+    "default": 0.0
+  },
+  "img2img_strength": {
+    "description": "图生图强度（0-1）",
+    "type": "float",
+    "default": 0.45
+  },
+  "img2img_steps": {
+    "description": "图生图推理步数",
+    "type": "int",
+    "default": 4
+  },
+  "img2img_max_side": {
+    "description": "图生图输入最长边，0 = 不缩放（原尺寸）",
+    "type": "int",
+    "default": 0
+  },
+  "max_prompt_chars": {
+    "description": "提示词最大长度，0 = 不限制",
+    "type": "int",
+    "default": 0
+  },
+  "allow_sender_avatar_fallback": {
+    "description": "图生图无图时是否回退使用发送者头像",
+    "type": "bool",
+    "default": false
+  },
+  "max_concurrency": {
+    "description": "最大并发数，0 = 不限制（不建信号量）",
+    "type": "int",
+    "default": 0
+  },
+  "enable_rate_limit": {
+    "description": "是否启用限流",
+    "type": "bool",
+    "default": false
+  },
+  "user_rpm": {
+    "description": "每个用户每分钟最大请求数",
+    "type": "int",
+    "default": 2
+  },
+  "global_rpm": {
+    "description": "全局每分钟最大请求数",
+    "type": "int",
+    "default": 8
+  },
+  "user_cooldown_seconds": {
+    "description": "同一用户连续请求冷却秒数",
+    "type": "int",
+    "default": 15
+  },
+  "admin_bypass_limit": {
+    "description": "机器人管理员是否绕过限流",
+    "type": "bool",
+    "default": true
+  }
+}

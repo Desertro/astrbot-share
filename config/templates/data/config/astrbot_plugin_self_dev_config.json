@@ -1,0 +1,20 @@
+{
+  "admin_uids": [
+    "{{AB_QQ_1}}",
+    "{{AB_QQ_12}}"
+  ],
+  "allowed_plugins": [
+    "astrbot_plugin_selfdev_demo",
+    "astrbot_plugin_mem_chat",
+    "astrbot_plugin_member_tags",
+    "astrbot_plugin_self_agent",
+    "astrbot_plugin_meme_kb"
+  ],
+  "coder_base_url": "",
+  "coder_api_key": "",
+  "coder_model": "deepseek-flash",
+  "coder_temperature": 0.2,
+  "max_steps": 16,
+  "max_diff_chars": 12000,
+  "max_diff_in_chat": 1500
+}

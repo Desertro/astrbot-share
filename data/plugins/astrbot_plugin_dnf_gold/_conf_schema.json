@@ -1,0 +1,28 @@
+{
+  "default_zone": {
+    "description": "默认查询大区代码（如 K3A / K3B）",
+    "type": "string",
+    "default": "K3A"
+  },
+  "broadcast_hour": {
+    "description": "每日播报小时（0-23，本地时间）",
+    "type": "int",
+    "default": 8
+  },
+  "broadcast_enabled": {
+    "description": "是否开启每日金价播报",
+    "type": "bool",
+    "default": true
+  },
+  "broadcast_groups": {
+    "description": "需要每日播报的群聊白名单（Group ID 列表）",
+    "type": "list",
+    "items": { "type": "string" },
+    "default": []
+  },
+  "use_node_project": {
+    "description": "是否启用本地 astrbot-dnf-gold Node 项目",
+    "type": "bool",
+    "default": false
+  }
+}

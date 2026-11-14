@@ -1,0 +1,461 @@
+{
+  "vision_llm": {
+    "description": "快速图片处理LLM配置",
+    "type": "object",
+    "default": {
+      "enable": false,
+      "provider": "openai",
+      "base_url": "https://api.openai.com/v1",
+      "api_key": "",
+      "api_key_source": "local",
+      "model": "gpt-4o-mini",
+      "prompt": "请简要描述这张图片的内容，50字以内。",
+      "format": "openai",
+      "bypass_proxy": false,
+      "enable_web_search": false,
+      "max_output_tokens": 2000,
+      "timeout_sec": 45,
+      "queue_timeout_sec": 2,
+      "max_concurrency": 1,
+      "circuit_breaker_failures": 2,
+      "circuit_breaker_cooldown_sec": 120,
+      "failure_fallback_text": "识图服务当前响应超时或繁忙，本次未能可靠识别图片；请勿猜测具体角色或内容。",
+      "fallback_enabled": false,
+      "fallback_base_url": "",
+      "fallback_api_key": "",
+      "fallback_model": "gemini-3.8-flash"
+    },
+    "items": {
+      "enable": {
+        "type": "bool",
+        "description": "启用"
+      },
+      "provider": {
+        "type": "string",
+        "description": "提供商"
+      },
+      "base_url": {
+        "type": "string",
+        "description": "API地址"
+      },
+      "api_key": {
+        "type": "string",
+        "description": "API密钥"
+      },
+      "api_key_source": {
+        "type": "string",
+        "description": "API密钥来源",
+        "options": [
+          "local",
+          "mem_chat",
+          "shoubanhua"
+        ],
+        "labels": [
+          "使用本插件配置",
+          "复用 mem_chat DeepSeek Key",
+          "复用手办化插件 Yezi Key"
+        ],
+        "default": "local",
+        "hint": "mem_chat 凭据仅允许注入 {{AB_CMD_PROVIDER_SOURCES_2_API_BASE}}；手办化凭据仅允许注入 https://api.yezi.help。复用的 Key 都不会写入本插件配置。"
+      },
+      "model": {
+        "type": "string",
+        "description": "模型名称"
+      },
+      "prompt": {
+        "type": "string",
+        "description": "提示词"
+      },
+      "format": {
+        "type": "string",
+        "description": "载荷格式",
+        "options": [
+          "openai",
+          "anthropic",
+          "google",
+          "volces_responses"
+        ],
+        "labels": [
+          "OpenAI格式",
+          "Anthropic Messages格式",
+          "Google Gemini格式",
+          "Volces Ark Responses (豆包)"
+        ],
+        "default": "openai"
+      },
+      "bypass_proxy": {
+        "type": "bool",
+        "description": "视觉 API 请求绕过系统代理",
+        "default": false,
+        "hint": "仅用于局域网或必须直连的 API；启用后该视觉 API 请求不会读取 HTTP(S)_PROXY。"
+      },
+      "enable_web_search": {
+        "type": "bool",
+        "description": "启用网络搜索 (仅 volces_responses 生效)",
+        "default": false,
+        "hint": "豆包 web_search 单独计费，但能显著提升新 VTuber/二次元角色识别准确度。"
+      },
+      "max_output_tokens": {
+        "type": "int",
+        "description": "最大输出 tokens",
+        "default": 2000,
+        "hint": "不同兼容 API 对推理 tokens 的计数方式可能不同。"
+      },
+      "thinking_enabled": {
+        "type": "bool",
+        "description": "启用思考模式（DeepSeek）",
+        "default": false,
+        "hint": "简短识图建议关闭，避免推理消耗全部输出 tokens 导致正文为空。"
+      },
+      "timeout_sec": {
+        "type": "int",
+        "description": "单次识图请求超时（秒）",
+        "default": 45,
+        "hint": "超过该时间会取消请求并让 mem_chat 使用失败提示继续处理。"
+      },
+      "queue_timeout_sec": {
+        "type": "int",
+        "description": "等待识图并发槽超时（秒）",
+        "default": 2,
+        "hint": "并发已满时只短暂排队，避免大量图片拖住消息流水线。"
+      },
+      "max_concurrency": {
+        "type": "int",
+        "description": "识图 API 最大并发数",
+        "default": 1
+      },
+      "circuit_breaker_failures": {
+        "type": "int",
+        "description": "触发熔断的连续失败次数",
+        "default": 2
+      },
+      "circuit_breaker_cooldown_sec": {
+        "type": "int",
+        "description": "熔断冷却时间（秒）",
+        "default": 120
+      },
+      "failure_fallback_text": {
+        "type": "string",
+        "description": "识图失败时注入 mem_chat 的提示",
+        "default": "识图服务当前响应超时或繁忙，本次未能可靠识别图片；请勿猜测具体角色或内容。"
+      },
+      "fallback_enabled": {
+        "type": "bool",
+        "description": "启用备用识图站点",
+        "default": false,
+        "hint": "先确认备用站点有可用模型渠道；失败时在原超时预算内切换。"
+      },
+      "fallback_base_url": {
+        "type": "string",
+        "description": "备用识图站点",
+        "default": ""
+      },
+      "fallback_api_key": {
+        "type": "string",
+        "description": "备用识图密钥",
+        "default": ""
+      },
+      "fallback_model": {
+        "type": "string",
+        "description": "备用识图模型",
+        "default": "gemini-3.8-flash"
+      }
+    }
+  },
+  "vision_fast_llm": {
+    "description": "低成本图片路由LLM配置（可留空，默认复用 vision_llm 但禁用 web_search）",
+    "type": "object",
+    "default": {
+      "enable": true,
+      "provider": "",
+      "base_url": "",
+      "api_key": "",
+      "model": "",
+      "format": "",
+      "max_output_tokens": 800
+    },
+    "items": {
+      "enable": {
+        "type": "bool",
+        "description": "启用低成本路由",
+        "default": true
+      },
+      "provider": {
+        "type": "string",
+        "description": "提供商（留空则继承 vision_llm）"
+      },
+      "base_url": {
+        "type": "string",
+        "description": "API地址（留空则继承 vision_llm）"
+      },
+      "api_key": {
+        "type": "string",
+        "description": "API密钥（留空则继承 vision_llm）"
+      },
+      "model": {
+        "type": "string",
+        "description": "模型名称（留空则继承 vision_llm）"
+      },
+      "format": {
+        "type": "string",
+        "description": "载荷格式（留空则继承 vision_llm）",
+        "options": [
+          "",
+          "openai",
+          "anthropic",
+          "google",
+          "volces_responses"
+        ],
+        "labels": [
+          "继承 vision_llm",
+          "OpenAI格式",
+          "Anthropic Messages格式",
+          "Google Gemini格式",
+          "Volces Ark Responses (豆包)"
+        ],
+        "default": ""
+      },
+      "max_output_tokens": {
+        "type": "int",
+        "description": "最大输出 tokens",
+        "default": 800,
+        "hint": "Seed 2.0 mini 可能消耗 reasoning_tokens，建议不要低于 800。"
+      }
+    }
+  },
+  "vision_route_enable": {
+    "description": "启用智能识图路由",
+    "type": "bool",
+    "default": true,
+    "hint": "普通图先走低成本路由，只有二次元/不确定图片再进入复杂识图与 web_search。"
+  },
+  "vision_route_anime_score_threshold": {
+    "description": "路由判定为二次元的分数阈值",
+    "type": "int",
+    "default": 70,
+    "hint": "fast 路由返回 anime_score 达到该值时会升级到复杂识图。"
+  },
+  "vision_route_simple_confidence_threshold": {
+    "description": "普通图路由最低置信度",
+    "type": "int",
+    "default": 70,
+    "hint": "route=simple 且置信度达到该值才会跳过复杂识图；否则保守升级。"
+  },
+  "vision_route_image_max_dim": {
+    "description": "路由模型图片最大边长(px)",
+    "type": "int",
+    "default": 384
+  },
+  "vision_route_image_max_kb": {
+    "description": "路由模型图片最大体积(KB)",
+    "type": "int",
+    "default": 80
+  },
+  "vision_route_max_output_tokens": {
+    "description": "路由模型最大输出 tokens",
+    "type": "int",
+    "default": 800
+  },
+  "chat_model_supports_vision": {
+    "description": "聊天模型是否支持识图功能",
+    "type": "bool",
+    "default": false,
+    "hint": "当消息为 @/唤醒触发且聊天模型本身支持多模态时，可避免额外调用 vision_llm。"
+  },
+  "vision_image_cache_enable": {
+    "description": "启用群聊重复图片视觉描述缓存（非 @ 消息）",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后会把图片 file/url 归一化后写入本地 SQLite，并复用缓存的 [图片内容: ...]，减少视觉 LLM 调用。"
+  },
+  "vision_image_cache_ttl_days": {
+    "description": "图片视觉描述缓存有效期(天)",
+    "type": "int",
+    "default": 30,
+    "hint": "超过有效期的缓存不会被使用，并会在写入时自动清理。"
+  },
+  "vision_image_cache_max_records": {
+    "description": "图片视觉描述缓存最大记录数(每群)",
+    "type": "int",
+    "default": 20000,
+    "hint": "超过后会按最后出现时间从旧到新裁剪。"
+  },
+  "vision_image_simhash_enable": {
+    "description": "启用图片感知哈希去重",
+    "type": "bool",
+    "default": true,
+    "hint": "对压缩/轻微变体图片做近似匹配，减少 QQ 压缩导致的重复识图。"
+  },
+  "vision_image_simhash_max_hamming": {
+    "description": "感知哈希匹配最大汉明距离",
+    "type": "int",
+    "default": 6,
+    "hint": "越大越容易命中相似图，也更可能误判。建议 4-8。"
+  },
+  "vision_image_simhash_scan_limit": {
+    "description": "感知哈希检索扫描上限",
+    "type": "int",
+    "default": 3000,
+    "hint": "每次近似匹配最多扫描的历史图片记录数。"
+  },
+  "vision_image_simhash_ui_strict_enable": {
+    "description": "对游戏/UI截图启用更严格近似匹配",
+    "type": "bool",
+    "default": true,
+    "hint": "当候选描述像截图/UI时，使用更严格阈值，减少新截图误判为旧图。"
+  },
+  "vision_image_simhash_ui_max_hamming": {
+    "description": "游戏/UI截图近似匹配最大汉明距离",
+    "type": "int",
+    "default": 1,
+    "hint": "仅在 UI 严格模式启用时生效。建议 0-2。"
+  },
+  "auto_ingest_group_images": {
+    "description": "自动接收并处理群内所有图片消息",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后 vision_media 会监听全群图片（含机器人自己发的图）并写入视觉缓存，便于后续复用描述。"
+  },
+  "mirror_bot_image_msgs_to_mem_chat": {
+    "description": "机器人发图自动镜像到 mem_chat 记忆",
+    "type": "bool",
+    "default": true,
+    "hint": "仅对 sender_id=self_id 的群图生效。会把带 [图片内容: ...] 的文本写入 mem_chat，便于后续语义召回。"
+  },
+  "mem_chat_llm_image_max_kb": {
+    "description": "图片发送给 LLM 的最大体积(KB)",
+    "type": "int",
+    "default": 2048,
+    "hint": "DeepSeek Flash 会按总像素自动缩放；提高体积上限可保留截图小字和细节。"
+  },
+  "mem_chat_llm_image_max_dim": {
+    "description": "图片发送给 LLM 的最大边长(px)",
+    "type": "int",
+    "default": 4096,
+    "hint": "适配竖长截图；DeepSeek 会在服务端缩放到约 1300×1300 等效总像素。"
+  },
+  "mem_chat_llm_image_quality_init": {
+    "description": "图片压缩初始 JPEG 质量",
+    "type": "int",
+    "default": 90
+  },
+  "mem_chat_llm_image_quality_min": {
+    "description": "图片压缩最低 JPEG 质量",
+    "type": "int",
+    "default": 65
+  },
+  "mem_chat_llm_gif_max_frames": {
+    "description": "GIF 抽帧数量上限",
+    "type": "int",
+    "default": 6
+  },
+  "mem_chat_llm_gif_total_max_kb": {
+    "description": "GIF 抽帧总预算(KB)",
+    "type": "int",
+    "default": 3072
+  },
+  "vision_llm_response_mode": {
+    "description": "视觉 LLM 输出模式",
+    "type": "string",
+    "default": "text",
+    "options": [
+      "text",
+      "json"
+    ],
+    "labels": [
+      "文本描述",
+      "JSON结构化"
+    ],
+    "hint": "JSON结构化模式会要求模型只输出 JSON，用于打标与自动精华等流程。"
+  },
+  "vision_essence_enable": {
+    "description": "启用自动群精华",
+    "type": "bool",
+    "default": false,
+    "hint": "仅 OneBot v11 / aiocqhttp 侧支持 set_essence_msg 时生效。"
+  },
+  "vision_essence_group_whitelist": {
+    "description": "自动精华群白名单（Group ID 列表）",
+    "type": "list",
+    "items": {
+      "type": "string"
+    },
+    "default": [],
+    "hint": "仅在白名单内的群聊才会自动设为精华。"
+  },
+  "vision_essence_marker": {
+    "description": "视觉精华标志符名",
+    "type": "string",
+    "default": "vision_essence",
+    "hint": "会把标志符注入到传给 mem_chat 的文本中，例如 [vision_essence=1]。"
+  },
+  "vision_essence_prompt_extra": {
+    "description": "精华判定额外提示词",
+    "type": "string",
+    "default": "当图片是好看的色图（cos自拍、二次元高质量图，且画面完整清晰、主体突出）时才倾向高分；游戏截图/带UI遮挡/裁切不完整/仅角色头像或普通立绘一般低分。",
+    "hint": "用于细化 essence=1 的判定标准。"
+  },
+  "vision_essence_score_threshold": {
+    "description": "自动精华阈值分数(0-100)",
+    "type": "int",
+    "default": 85,
+    "hint": "当视觉评分 score >= 阈值 且命中白名单时才自动设精华。"
+  },
+  "vision_essence_cleanup_group_whitelist": {
+    "description": "自动精华满额清理群白名单（Group ID 列表）",
+    "type": "list",
+    "items": {
+      "type": "string"
+    },
+    "default": [],
+    "hint": "仅在这些群里，当 set_essence_msg 因精华容量已满而失败时，才会删除机器人自己较早设置的精华后重试。"
+  },
+  "vision_essence_cleanup_retention_days": {
+    "description": "自动精华保留天数",
+    "type": "int",
+    "default": 7,
+    "hint": "触发满额清理或定时巡检时，只会删除机器人自己设置且早于该天数的旧精华。默认仅保留最近 7 天。"
+  },
+  "vision_essence_cleanup_auto_enable": {
+    "description": "启用自动精华巡检清理",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后，插件会定时扫描配置群的精华列表，自动清理机器人自己设置且超过保留期的旧精华。"
+  },
+  "vision_essence_cleanup_interval_minutes": {
+    "description": "自动精华巡检间隔(分钟)",
+    "type": "int",
+    "default": 30,
+    "hint": "收到群消息时按该间隔触发一次后台巡检，避免频繁请求精华列表。"
+  },
+  "vision_nsfw_enable": {
+    "description": "启用黄暴判定",
+    "type": "bool",
+    "default": true,
+    "hint": "仅在 vision_llm_response_mode=json 时生效。"
+  },
+  "vision_nsfw_withdraw_enable": {
+    "description": "黄暴图片自动撤回",
+    "type": "bool",
+    "default": true,
+    "hint": "需要平台支持 delete_msg/recall_msg action。"
+  },
+  "vision_nsfw_score_threshold": {
+    "description": "黄暴评分阈值(0-100)",
+    "type": "int",
+    "default": 85,
+    "hint": "当 nsfw_score >= 阈值 时判定为黄暴图片。"
+  },
+  "vision_nsfw_mark_text": {
+    "description": "黄暴图片替换描述文本",
+    "type": "string",
+    "default": "黄暴图片",
+    "hint": "判定为黄暴时，用该文本替换图片描述。"
+  },
+  "vision_nsfw_prompt_extra": {
+    "description": "黄暴判定额外提示词",
+    "type": "string",
+    "default": "若出现严重漏点/露点、性器官、性交、色情暴力、未成年色情或其他违法性黄暴内容，视为黄暴图片。",
+    "hint": "用于细化黄暴判定标准。"
+  }
+}

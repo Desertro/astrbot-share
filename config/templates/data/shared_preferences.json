@@ -1,0 +1,13 @@
+{
+  "inactivated_llm_tools": [
+    "fetch_url",
+    "web_search",
+    "ark_web_search",
+    "reverse_image_search"
+  ],
+  "inactivated_plugins": [
+    "data.plugins.astrbot_plugin_aw.main",
+    "data.plugins.astrbot_plugin_lmarena.main",
+    "data.plugins.astrbot_plugin_ark_search.main"
+  ]
+}

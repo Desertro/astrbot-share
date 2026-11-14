@@ -1,0 +1,13 @@
+services:
+  astrbot:
+    build: .
+    container_name: astrbot-share
+    restart: unless-stopped
+    # Linux/WSL: existing localhost services and reverse WebSocket remain reachable.
+    network_mode: host
+    volumes:
+      - ./data:/AstrBot/data
+      - ./.env:/AstrBot/.env:ro
+      - ./logs:/AstrBot/logs
+    environment:
+      TZ: Asia/Shanghai

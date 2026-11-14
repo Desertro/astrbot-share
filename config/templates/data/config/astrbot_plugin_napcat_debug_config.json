@@ -1,0 +1,6 @@
+{
+  "test_qq_account": "{{AB_QQ_12}}",
+  "dev_group_id": "",
+  "only_allow_test_account": true,
+  "napcat_docs_url": "https://docs.astrbot.app/deploy/platform/aiocqhttp/napcat.html"
+}

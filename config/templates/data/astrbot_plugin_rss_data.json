@@ -1,0 +1,319 @@
+{
+  "rsshub_endpoints": [
+    "https://rsshub.app"
+  ],
+  "settings": {
+    "rsshub_whitelist_sessions": [
+      "default:GroupMessage:{{AB_QQ_8}}",
+      "default:GroupMessage:{{AB_QQ_6}}"
+    ]
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/3546560220629195?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0/30 * * * *",
+        "last_update": 1794506400,
+        "latest_link": "https://www.bilibili.com/video/BV1CLWa6REja"
+      }
+    },
+    "info": {
+      "title": "防傻贴士 的 bilibili 空间",
+      "description": "防傻贴士 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/3546385563519110?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_8}}": {
+        "cron_expr": "0/30 * * * *",
+        "last_update": 1793995200,
+        "latest_link": "https://www.bilibili.com/video/BV1oP4B6MEAW"
+      },
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0/30 * * * *",
+        "last_update": 1793995200,
+        "latest_link": "https://www.bilibili.com/video/BV1oP4B6MEAW"
+      }
+    },
+    "info": {
+      "title": "冷幽无厘头 的 bilibili 空间",
+      "description": "冷幽无厘头 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/2061131593?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1787191479,
+        "latest_link": "https://www.bilibili.com/video/BV1Ec8w6LE1A"
+      }
+    },
+    "info": {
+      "title": "书经馆馆长 的 bilibili 空间",
+      "description": "书经馆馆长 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/16381701?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1794449400,
+        "latest_link": "https://www.bilibili.com/video/BV18WWd6qE6x"
+      }
+    },
+    "info": {
+      "title": "poimiku不是笨比 的 bilibili 空间",
+      "description": "poimiku不是笨比 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/3461576323500263?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1794447719,
+        "latest_link": "https://www.bilibili.com/video/BV1U8Wd6YELs"
+      },
+      "default:GroupMessage:{{AB_QQ_7}}": {
+        "cron_expr": "0/30 * * * *",
+        "last_update": 1794447719,
+        "latest_link": "https://www.bilibili.com/video/BV1U8Wd6YELs"
+      }
+    },
+    "info": {
+      "title": "哈基漂不想睡大街 的 bilibili 空间",
+      "description": "哈基漂不想睡大街 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/65582571?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1794453110,
+        "latest_link": "https://www.bilibili.com/video/BV1CfWR69Epr"
+      }
+    },
+    "info": {
+      "title": "川崎仁仁菜 的 bilibili 空间",
+      "description": "川崎仁仁菜 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/136577694?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1794367890,
+        "latest_link": "https://www.bilibili.com/video/BV1CkW26YEaR"
+      }
+    },
+    "info": {
+      "title": "byd小绫 的 bilibili 空间",
+      "description": "byd小绫 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/19148003?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_2}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1792845621,
+        "latest_link": "https://www.bilibili.com/video/BV1xhHu6bEub"
+      }
+    },
+    "info": {
+      "title": "雨缘不吃芋圆 的 bilibili 空间",
+      "description": "雨缘不吃芋圆 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/283447059?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_2}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1789671760,
+        "latest_link": "https://www.bilibili.com/video/BV1NfeC6HE7J"
+      }
+    },
+    "info": {
+      "title": "KChhd 的 bilibili 空间",
+      "description": "KChhd 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/140069178?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_2}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1794267548,
+        "latest_link": "https://www.bilibili.com/video/BV1XJWg6kEGk"
+      }
+    },
+    "info": {
+      "title": "DNF召唤小熊 的 bilibili 空间",
+      "description": "DNF召唤小熊 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/6108138?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_2}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1794081931,
+        "latest_link": "https://www.bilibili.com/video/BV1fv4s6zEFs"
+      }
+    },
+    "info": {
+      "title": "Sky灬素颜 的 bilibili 空间",
+      "description": "Sky灬素颜 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/1906522?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_2}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1788978600,
+        "latest_link": "https://www.bilibili.com/video/BV1LFY86hEeZ"
+      }
+    },
+    "info": {
+      "title": "欺符·逆针撃 的 bilibili 空间",
+      "description": "欺符·逆针撃 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/278538709?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1794368523,
+        "latest_link": "https://www.bilibili.com/video/BV1NBW26TEVZ"
+      }
+    },
+    "info": {
+      "title": "波士机器人150气 的 bilibili 空间",
+      "description": "波士机器人150气 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/518720019?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1794452694,
+        "latest_link": "https://www.bilibili.com/video/BV1kfWR69E4M"
+      },
+      "default:GroupMessage:{{AB_QQ_2}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1794452694,
+        "latest_link": "https://www.bilibili.com/video/BV1kfWR69E4M"
+      }
+    },
+    "info": {
+      "title": "安桑不伤 的 bilibili 空间",
+      "description": "安桑不伤 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/388309479?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_2}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1794462328,
+        "latest_link": "https://www.bilibili.com/video/BV1PcWZ6wE1d"
+      },
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1794462328,
+        "latest_link": "https://www.bilibili.com/video/BV1PcWZ6wE1d"
+      }
+    },
+    "info": {
+      "title": "J诺兰 的 bilibili 空间",
+      "description": "J诺兰 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/14207783?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_2}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1794512976,
+        "latest_link": "https://www.bilibili.com/video/BV1KqWv6MENx"
+      }
+    },
+    "info": {
+      "title": "提耶拉_Official 的 bilibili 空间",
+      "description": "提耶拉_Official 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/398510?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1789088400,
+        "latest_link": "https://www.bilibili.com/video/BV1fhYN6AEay"
+      },
+      "default:GroupMessage:{{AB_QQ_2}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1789088400,
+        "latest_link": "https://www.bilibili.com/video/BV1fhYN6AEay"
+      }
+    },
+    "info": {
+      "title": "泽野螳螂 的 bilibili 空间",
+      "description": "泽野螳螂 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/293187959?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1793945193,
+        "latest_link": "https://www.bilibili.com/video/BV1Uy4z6fEXG"
+      }
+    },
+    "info": {
+      "title": "寞桀緣才 的 bilibili 空间",
+      "description": "寞桀緣才 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/37784988?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1794080268,
+        "latest_link": "https://www.bilibili.com/video/BV1nL4x6GEYv"
+      },
+      "default:GroupMessage:{{AB_QQ_2}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1794080268,
+        "latest_link": "https://www.bilibili.com/video/BV1nL4x6GEYv"
+      }
+    },
+    "info": {
+      "title": "卡罗路的夏夜 的 bilibili 空间",
+      "description": "卡罗路的夏夜 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/2009780217?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0 * * * *",
+        "last_update": 1784485800,
+        "latest_link": "https://www.bilibili.com/video/BV11vK264EPN"
+      }
+    },
+    "info": {
+      "title": "钱小爱然 的 bilibili 空间",
+      "description": "钱小爱然 的 bilibili 空间 - Powered by RSSHub"
+    }
+  },
+  "{{AB_RSS_DEFAULT_RSSHUB_ENDPOINT}}/bilibili/user/video/285291253?format=rss": {
+    "subscribers": {
+      "default:GroupMessage:{{AB_QQ_2}}": {
+        "cron_expr": "0/30 * * * *",
+        "last_update": 1793585006,
+        "latest_link": "https://www.bilibili.com/video/BV1Ly4w6NEJo"
+      },
+      "default:GroupMessage:{{AB_QQ_6}}": {
+        "cron_expr": "0/30 * * * *",
+        "last_update": 1793585006,
+        "latest_link": "https://www.bilibili.com/video/BV1Ly4w6NEJo"
+      }
+    },
+    "info": {
+      "title": "丨日日颂歌 的 bilibili 空间",
+      "description": "丨日日颂歌 的 bilibili 空间 - Powered by RSSHub"
+    }
+  }
+}

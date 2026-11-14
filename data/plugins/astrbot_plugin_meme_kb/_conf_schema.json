@@ -1,0 +1,62 @@
+{
+  "admin_uids": {
+    "description": "能往梗库里写/删的 QQ 号",
+    "type": "list",
+    "default": ["{{AB_QQ_1}}"]
+  },
+  "db_path": {
+    "description": "梗库 sqlite 路径（留空=data/plugin_data/meme_kb/memes.db）",
+    "type": "string",
+    "default": ""
+  },
+  "embed_base_url": {
+    "description": "向量接口地址（留空复用 mem_chat 的 embedding 配置）",
+    "type": "string",
+    "default": ""
+  },
+  "embed_api_key": {
+    "description": "向量接口 key（留空复用 mem_chat）",
+    "type": "string",
+    "default": ""
+  },
+  "embed_model": {
+    "description": "向量模型",
+    "type": "string",
+    "default": "BAAI/bge-m3"
+  },
+  "chat_base_url": {
+    "description": "整理用的对话模型地址（留空复用 mem_chat）",
+    "type": "string",
+    "default": ""
+  },
+  "chat_api_key": {
+    "description": "对话模型 key（留空复用 mem_chat）",
+    "type": "string",
+    "default": ""
+  },
+  "chat_model": {
+    "description": "整理用的模型名",
+    "type": "string",
+    "default": "deepseek-flash"
+  },
+  "search_k": {
+    "description": "检索返回条数",
+    "type": "int",
+    "default": 3
+  },
+  "min_score": {
+    "description": "相似度下限（0-1）",
+    "type": "float",
+    "default": 0.45
+  },
+  "dedupe_score": {
+    "description": "超过这个相似度就当成同一条合并",
+    "type": "float",
+    "default": 0.92
+  },
+  "default_source": {
+    "description": "默认来源标记",
+    "type": "string",
+    "default": "chat"
+  }
+}

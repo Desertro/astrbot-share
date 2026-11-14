@@ -1,0 +1,6 @@
+{
+  "enable_context_parsing": true,
+  "send_probability": 0.3,
+  "emoji_source": "",
+  "request_timeout": 15
+}

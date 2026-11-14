@@ -1,0 +1,192 @@
+{
+  "enabled": {
+    "description": "是否启用无账号二次元图片测试推送",
+    "type": "bool",
+    "default": true
+  },
+  "target_umo": {
+    "description": "测试推送目标 UMO",
+    "type": "string",
+    "default": "default:GroupMessage:{{AB_QQ_8}}"
+  },
+  "interval_seconds": {
+    "description": "检查新图的间隔（秒）；没有合格新图时不会推送",
+    "type": "int",
+    "default": 180
+  },
+  "max_age_hours": {
+    "description": "允许图片帖子的最大发布时长（小时）",
+    "type": "int",
+    "default": 48
+  },
+  "min_likes": {
+    "description": "最低公开热度；X/Bluesky 使用点赞数，Wallhaven 使用收藏数",
+    "type": "int",
+    "default": 2000
+  },
+  "x_accounts": {
+    "description": "X 固定画师账号兜底，多个用英文逗号分隔；无需登录",
+    "type": "string",
+    "default": "anzai_teachco,imasogari8119,32asako,redolbus,MonsterOfSukeP,nodati53,mona_svpa,sugarwhite1046,Cafe_Raichu,nekoP_X_00,date_shinobu,kokuzou593,Hle_____,shohosandaisuki,MikaPikaZo,rurudo_,neco_person,shirabii,TorinoAqua,DSmile9"
+  },
+  "x_rss_bases": {
+    "description": "匿名 X RSS 入口，按顺序故障切换",
+    "type": "string",
+    "default": "https://nitter.net,https://rss.xcancel.com"
+  },
+  "x_dynamic_artist_limit": {
+    "description": "从 Pixiv 当日公开榜动态发现的活跃 X 画师上限",
+    "type": "int",
+    "default": 120
+  },
+  "x_pixiv_ranking_pages": {
+    "description": "用于发现新作者的 Pixiv 排行页数，读取 daily/male/female 各榜",
+    "type": "int",
+    "default": 3
+  },
+  "pixiv_target_users_per_tag": {
+    "description": "每个偏好作品标签最多提取多少位近期 Pixiv 作者候选",
+    "type": "int",
+    "default": 12
+  },
+  "x_max_tweets_per_refresh": {
+    "description": "每次刷新最多向 X 官方匿名接口复核多少条图片推文",
+    "type": "int",
+    "default": 240
+  },
+  "x_timeline_concurrency": {
+    "description": "FxTwitter 作者媒体时间线并发数；过高可能触发公共服务限流",
+    "type": "int",
+    "default": 10
+  },
+  "x_media_posts_per_author": {
+    "description": "每位作者一次读取的近期媒体帖子数量",
+    "type": "int",
+    "default": 20
+  },
+  "x_refresh_minutes": {
+    "description": "匿名 X 候选池刷新间隔（分钟）",
+    "type": "int",
+    "default": 5
+  },
+  "author_pool_enabled": {
+    "description": "启用持久化二次元插画作者池及自动扩展/降权算法",
+    "type": "bool",
+    "default": true
+  },
+  "author_pool_max_size": {
+    "description": "作者池最大人数；超过后优先清理从未通过审核的低分观察作者",
+    "type": "int",
+    "default": 300
+  },
+  "author_pool_bootstrap_size": {
+    "description": "作者池冷启动人数；未达到时快速补齐，之后恢复渐进扩池",
+    "type": "int",
+    "default": 80
+  },
+  "author_pool_refresh_limit": {
+    "description": "每次刷新最多检查多少位 X 作者",
+    "type": "int",
+    "default": 150
+  },
+  "author_pool_new_per_refresh": {
+    "description": "每次从 Pixiv 当日榜最多新增多少位观察作者",
+    "type": "int",
+    "default": 12
+  },
+  "author_pool_exploration_ratio": {
+    "description": "每轮用于轮换试探观察作者的比例，其余名额优先高分作者",
+    "type": "float",
+    "default": 0.25
+  },
+  "author_pause_after_rejects": {
+    "description": "新作者连续多少张未通过插画审核后暂停；有历史通过记录的作者会多两次容错",
+    "type": "int",
+    "default": 3
+  },
+  "bluesky_feed_uris": {
+    "description": "Bluesky 公开自定义流 URI，多个用英文逗号分隔",
+    "type": "string",
+    "default": "at://did:plc:tazrmeme4dzahimsykusrwrk/app.bsky.feed.generator/anime-en-hot"
+  },
+  "min_width": {
+    "description": "最小图片宽度",
+    "type": "int",
+    "default": 800
+  },
+  "min_height": {
+    "description": "最小图片高度",
+    "type": "int",
+    "default": 800
+  },
+  "max_download_mb": {
+    "description": "单张图片最大下载体积（MB）",
+    "type": "int",
+    "default": 18
+  },
+  "duplicate_hash_distance": {
+    "description": "重复图感知哈希最大距离；同时检查全图、差分哈希和中心裁切，建议 8-12",
+    "type": "int",
+    "default": 10
+  },
+  "require_nsfw_scan": {
+    "description": "是否要求通过本地 NudeNet 裸露检测",
+    "type": "bool",
+    "default": true
+  },
+  "nsfw_threshold": {
+    "description": "裸露检测拦截阈值，越低越严格",
+    "type": "float",
+    "default": 0.22
+  },
+  "use_llm_vision_filter": {
+    "description": "是否使用当前多模态模型排除截图、广告、AI图和性暗示图片",
+    "type": "bool",
+    "default": true
+  },
+  "vision_provider_ids": {
+    "description": "视觉审核供应商故障切换顺序，多个用英文逗号分隔",
+    "type": "string",
+    "default": "deepseek_v4_flash,Google"
+  },
+  "vision_min_quality_score": {
+    "description": "二次元成品插画最低视觉质量分；88 起要求成熟构图、光影和丰富细节",
+    "type": "int",
+    "default": 88
+  },
+  "reject_male_characters": {
+    "description": "视觉审核时拦截含男性主体、配角或男女同框的图片",
+    "type": "bool",
+    "default": true
+  },
+  "vision_fallback_max_output_tokens": {
+    "description": "独立视觉兜底的输出预算，避免推理模型耗尽预算后没有返回审核 JSON",
+    "type": "int",
+    "default": 3000
+  },
+  "max_candidates_per_cycle": {
+    "description": "每轮最多审核多少张候选图",
+    "type": "int",
+    "default": 15
+  },
+  "candidate_refill_rounds": {
+    "description": "首批候选耗尽或不合格后，轮换未检查作者并主动补抓的批次数",
+    "type": "int",
+    "default": 1
+  },
+  "send_start_notice": {
+    "description": "插件启动时是否向测试群发送纯文字运行回执",
+    "type": "bool",
+    "default": true
+  },
+  "test_started_at": {
+    "description": "本轮限时测试开始时间（ISO 8601，留空则立即且不限时）",
+    "type": "string",
+    "default": ""
+  },
+  "test_ends_at": {
+    "description": "本轮限时测试结束时间（ISO 8601，到期自动停推并汇报）",
+    "type": "string",
+    "default": ""
+  }
+}

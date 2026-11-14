@@ -1,0 +1,11 @@
+{
+  "dogdiary_min_word_count": 150,
+  "dogdiary_max_word_count": 300,
+  "dogdiary_style": "幽默自嘲",
+  "dogdiary_auto_generate_time": "08:00",
+  "dogdiary_auto_send_time": "09:00",
+  "dogdiary_auto_send_groups": [
+    "{{AB_QQ_2}}"
+  ],
+  "dogdiary_forward_threshold": 200
+}

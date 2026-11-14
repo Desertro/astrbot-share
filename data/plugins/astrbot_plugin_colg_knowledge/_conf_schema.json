@@ -1,0 +1,123 @@
+{
+  "forum_id": {
+    "description": "COLG 论坛板块ID",
+    "type": "int",
+    "default": 171
+  },
+  "rate_limit_rps": {
+    "description": "抓取速率限制(请求/秒)",
+    "type": "float",
+    "default": 0.5
+  },
+  "embedding_rate_limit_rps": {
+    "description": "嵌入入库速率限制(请求/秒)",
+    "type": "float",
+    "default": 0.5
+  },
+  "pages_per_hour": {
+    "description": "每轮抓取的论坛页数",
+    "type": "int",
+    "default": 2
+  },
+  "max_threads_per_hour": {
+    "description": "每次抓取的帖子数量上限",
+    "type": "int",
+    "default": 50
+  },
+  "daily_digest_hour": {
+    "description": "每日生成论坛摘要的小时(0-23，本地时间)",
+    "type": "int",
+    "default": 3
+  },
+  "confirm_token": {
+    "description": "高风险抓取命令确认口令",
+    "type": "string",
+    "default": "{{AB_COLG_KNOWLEDGE_CONFIRM_TOKEN}}"
+  },
+  "max_thread_age_days": {
+    "description": "仅抓取主楼发布时间在最近 N 天内的帖子(北京时间)",
+    "type": "int",
+    "default": 3
+  },
+  "crawl_interval_sec": {
+    "description": "抓取周期(秒)",
+    "type": "int",
+    "default": 3600
+  },
+  "push_enabled": {
+    "description": "是否启用群聊自动推送",
+    "type": "bool",
+    "default": false
+  },
+  "push_interval_sec": {
+    "description": "推送周期(秒)",
+    "type": "int",
+    "default": 3600
+  },
+  "push_once_per_day": {
+    "description": "是否限制为北京时间每日最多推送一次",
+    "type": "bool",
+    "default": true
+  },
+  "push_start_hour_bj": {
+    "description": "北京时间到达该小时后才允许推送(0-23)",
+    "type": "int",
+    "default": 8
+  },
+  "push_snapshot_enabled": {
+    "description": "推送时附带网页快照",
+    "type": "bool",
+    "default": false
+  },
+  "snapshot_width": {
+    "description": "网页快照宽度(像素)",
+    "type": "int",
+    "default": 800
+  },
+  "snapshot_mode": {
+    "description": "网页快照模式(mshots/browser)",
+    "type": "string",
+    "default": "mshots"
+  },
+  "snapshot_height": {
+    "description": "浏览器快照高度(像素)",
+    "type": "int",
+    "default": 900
+  },
+  "snapshot_wait_sec": {
+    "description": "浏览器快照额外等待秒数",
+    "type": "float",
+    "default": 1.5
+  },
+  "snapshot_timeout_sec": {
+    "description": "浏览器快照超时秒数",
+    "type": "float",
+    "default": 12
+  },
+  "snapshot_mshots_poll_attempts": {
+    "description": "mshots 快照轮询次数",
+    "type": "int",
+    "default": 6
+  },
+  "snapshot_mshots_poll_interval_sec": {
+    "description": "mshots 快照轮询间隔秒数",
+    "type": "float",
+    "default": 5
+  },
+  "snapshot_full_page": {
+    "description": "浏览器快照是否截取整页",
+    "type": "bool",
+    "default": true
+  },
+  "snapshot_user_agent": {
+    "description": "浏览器快照使用的 User-Agent",
+    "type": "string",
+    "default": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/121.0 Safari/537.36"
+  },
+  "group_whitelist": {
+    "description": "接收推送的群聊白名单(Group ID 列表)",
+    "type": "list",
+    "items": { "type": "string" },
+    "default": []
+  }
+}

@@ -1,0 +1,7 @@
+name: member_tags
+desc: 缓存群成员的群等级/群头衔，供 mem_chat 的聊天提示词使用
+help: |
+  #头衔   看看这个群里已经记下谁是什么身份
+version: v0.1.0
+author: dsh
+repo:

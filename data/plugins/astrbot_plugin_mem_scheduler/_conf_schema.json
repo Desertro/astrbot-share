@@ -1,0 +1,78 @@
+{
+  "enabled": {
+    "description": "启用 mem_scheduler",
+    "type": "bool",
+    "default": true
+  },
+  "enable_command_api": {
+    "description": "启用 #mcs 命令入口（关闭后仅保留语义工具触发）",
+    "type": "bool",
+    "default": false
+  },
+  "timezone": {
+    "description": "调度时区",
+    "type": "string",
+    "default": "Asia/Shanghai"
+  },
+  "default_dry_run": {
+    "description": "全局默认 dry_run（建议保持开启）",
+    "type": "bool",
+    "default": true
+  },
+  "max_calls_per_minute": {
+    "description": "每分钟最多执行任务次数",
+    "type": "int",
+    "default": 12
+  },
+  "llm_provider_id": {
+    "description": "昵称决策使用的 LLM Provider ID（留空则使用当前 provider）",
+    "type": "string",
+    "default": ""
+  },
+  "nickname_mem_chat_only": {
+    "description": "nickname_refresh 仅通过 mem_chat 推送接口执行（不回退本地直改）",
+    "type": "bool",
+    "default": true
+  },
+  "nickname_cooldown_sec": {
+    "description": "昵称刷新冷却时间(秒)",
+    "type": "int",
+    "default": 21600
+  },
+  "nickname_min_interval_sec": {
+    "description": "nickname_refresh 间隔任务的最小触发周期(秒)",
+    "type": "int",
+    "default": 60
+  },
+  "nickname_daily_limit": {
+    "description": "昵称刷新每日最大执行次数",
+    "type": "int",
+    "default": 2
+  },
+  "notify_skip_in_group": {
+    "description": "自动任务被 cooldown/day_limit 拦截时是否在群里提示（默认关闭，避免刷屏）",
+    "type": "bool",
+    "default": false
+  },
+  "nickname_max_len": {
+    "description": "昵称最大长度",
+    "type": "int",
+    "default": 18
+  },
+  "forbidden_words": {
+    "description": "昵称禁止词列表（命中即拒绝执行）",
+    "type": "list",
+    "items": {
+      "type": "string"
+    },
+    "default": []
+  },
+  "seed_jobs": {
+    "description": "启动时注入的初始任务（仅当同 ID 任务不存在时生效）",
+    "type": "list",
+    "items": {
+      "type": "object"
+    },
+    "default": []
+  }
+}

@@ -1,0 +1,6 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Public upstream AstrBot QQ invitation URL embedded in the original UI"
+regexes = ['''uUEMKCROfsseS[+]8IzqPjzV3y1tzy4AkykwTib2jNkOFdzezF9s9XknqnIaf3CDft''']

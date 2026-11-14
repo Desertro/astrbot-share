@@ -1,0 +1,69 @@
+"""图片搜索插件常量定义."""
+
+# ==============================================================================
+# 网络请求相关
+# ==============================================================================
+
+# HTTP 请求超时时间 (秒)
+HTTP_TIMEOUT_SECONDS = 30
+
+# 下载图片超时时间 (秒)
+IMAGE_DOWNLOAD_TIMEOUT = 20
+
+# 默认 User-Agent (与 curl_cffi impersonate chrome120 保持一致)
+DEFAULT_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
+# 模拟浏览器的完整请求头
+BROWSER_HEADERS = {"User-Agent": DEFAULT_USER_AGENT}
+
+# ==============================================================================
+# SauceNAO 策略
+# ==============================================================================
+
+# SauceNAO API 地址
+SAUCENAO_BASE_URL = "https://saucenao.com/search.php"
+
+# SauceNAO 默认结果上限
+DEFAULT_SAUCENAO_MAX_RESULTS = 3
+
+# ==============================================================================
+# Google Lens 策略
+# ==============================================================================
+
+# SerpAPI 基础 URL
+SERPAPI_BASE_URL = "https://serpapi.com"
+
+# SearchAPI.io 搜索接口
+SEARCHAPI_BASE_URL = "https://www.searchapi.io/api/v1/search"
+
+# Google Lens 默认结果上限
+DEFAULT_GOOGLE_LENS_MAX_RESULTS = 5
+
+# ==============================================================================
+# Ascii2d 策略
+# ==============================================================================
+
+# Ascii2d 基础 URL
+ASCII2D_BASE_URL = "https://ascii2d.net"
+
+# Ascii2d 搜索 URL
+ASCII2D_SEARCH_URI_URL = f"{ASCII2D_BASE_URL}/search/uri"
+
+# Ascii2d 默认结果上限
+DEFAULT_ASCII2D_BOVW_MAX_RESULTS = 3
+DEFAULT_ASCII2D_COLOR_MAX_RESULTS = 2
+
+# ==============================================================================
+# 策略名称映射
+# ==============================================================================
+
+# 策略名称映射 (小写 -> 策略类名关键字)
+STRATEGY_ALIAS_MAP = {
+    "saucenao": "SauceNAO",
+    "sauce": "SauceNAO",
+    "google": "Google Lens",
+    "googlelens": "Google Lens",
+    "ascii2d": "Ascii2d",
+    "ascii": "Ascii2d",
+    "2d": "Ascii2d",
+}

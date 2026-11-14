@@ -1,0 +1,4 @@
+name: colg_knowledge
+desc: COLG 论坛抓取与知识库同步服务，每小时为 mem_chat 补充知识。
+author: desertro
+version: 0.1.0

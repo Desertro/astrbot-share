@@ -1,0 +1,41 @@
+{
+  "ai_behavior": {
+    "image_context_isolation": "session",
+    "max_images_per_session": 100,
+    "image_context_ttl_seconds": 0,
+    "max_image_context_sessions": 200,
+    "include_image_url_in_context": true,
+    "enable_llm_tools": true,
+    "llm_tool_silent_mode": false
+  },
+  "command": {
+    "image_wait_timeout_seconds": 60
+  },
+  "network": {
+    "proxy_url": "{{AB_IMGEXPLORATION_NETWORK_PROXY_URL}}",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "allow_image_upload": true,
+    "allow_local_file_access": false
+  },
+  "api_keys": {
+    "saucenao_api_key": "",
+    "searchapi_keys": [
+      "{{AB_IMGEXPLORATION_API_KEYS_SEARCHAPI_KEYS_0}}"
+    ],
+    "serpapi_keys": [],
+    "ascii2d_session_id": "",
+    "ascii2d_cf_clearance": ""
+  },
+  "strategies": {
+    "enable_saucenao": true,
+    "saucenao_similarity_threshold": 40,
+    "enable_google_lens": true,
+    "enable_ascii2d": true
+  },
+  "display": {
+    "saucenao_max_results": 3,
+    "google_lens_max_results": 5,
+    "ascii2d_bovw_max_results": 3,
+    "ascii2d_color_max_results": 2
+  }
+}

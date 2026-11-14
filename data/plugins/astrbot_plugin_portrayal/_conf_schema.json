@@ -1,0 +1,258 @@
+{
+    "per_msg_count": {
+        "description": "每轮获取的群消息数量",
+        "type": "int",
+        "hint": "每轮获取这么多的消息，从这些消息中抽取出目标群友的文本消息",
+        "default": 200
+    },
+    "max_msg_count": {
+        "description": "有效消息目标数量",
+        "type": "int",
+        "hint": "从最新消息向过去回溯时，至少凑到该数量的“目标用户有效消息”（非空且非命令）再停止；用于保证画像依据。",
+        "default": 400
+    },
+    "target_msg_scan_limit": {
+        "description": "目标用户消息预扫描上限",
+        "type": "int",
+        "hint": "先从 mem_chat 与本地索引预扫描目标本人消息（按最新向前），用于优先凑够有效发言，再补参与式上下文。",
+        "default": 2400
+    },
+    "memchat_target_only_first": {
+        "description": "优先使用mem_chat目标用户直出语料",
+        "type": "bool",
+        "hint": "开启后会先在mem_chat里统计并提取目标用户消息；若数量达到上下文目标下限，直接用目标本人语料构建上下文，跳过在线回溯。",
+        "default": true
+    },
+    "context_target_count": {
+        "description": "参与式上下文目标数量",
+        "type": "int",
+        "hint": "从最新消息向过去回溯时，目标参与式上下文数量（含目标发言与上下文块）。",
+        "default": 400
+    },
+    "context_target_tolerance": {
+        "description": "参与式上下文目标浮动",
+        "type": "int",
+        "hint": "允许上下文数量在目标值上下浮动的条数，例如目标400、浮动10时，390-410都视为达标。",
+        "default": 10
+    },
+    "max_query_rounds": {
+        "description": "获取群消息的最大轮数",
+        "type": "int",
+        "hint": "自动回溯的安全上限轮数。通常会在达到上下文目标前提前停止；只有历史不足或触达上限才会停。",
+        "default": 200
+    },
+    "max_query_rounds_hard_cap": {
+        "description": "查询轮数硬上限",
+        "type": "int",
+        "hint": "命令参数与默认轮数都会被限制在该上限内，防止极端情况下无限回溯。",
+        "default": 600
+    },
+    "enable_msg_index": {
+        "description": "启用本地消息索引",
+        "type": "bool",
+        "hint": "开启后会把回溯到的消息写入本地SQLite索引；后续画像优先从索引召回，显著减少在线翻页。",
+        "default": true
+    },
+    "msg_index_db_path": {
+        "description": "消息索引数据库路径",
+        "type": "string",
+        "hint": "留空默认使用插件目录下 portrayal_msg_index.db",
+        "default": ""
+    },
+    "index_query_batch_size": {
+        "description": "索引单轮读取条数",
+        "type": "int",
+        "hint": "每轮从本地索引读取多少条消息用于构建参与式上下文。",
+        "default": 1200
+    },
+    "index_query_max_rounds": {
+        "description": "索引读取最大轮数",
+        "type": "int",
+        "hint": "索引召回阶段的最大轮数上限。",
+        "default": 120
+    },
+    "context_prev_msgs": {
+        "description": "参与上下文前文窗口",
+        "type": "int",
+        "hint": "命中目标用户发言时，向前带入多少条群消息",
+        "default": 6
+    },
+    "context_next_msgs": {
+        "description": "参与上下文后文窗口",
+        "type": "int",
+        "hint": "命中目标用户发言时，向后带入多少条群消息",
+        "default": 4
+    },
+    "context_force_prev_msgs": {
+        "description": "强制保留前文条数",
+        "type": "int",
+        "hint": "每个目标发言锚点都会强制保留其前N条消息，建议 2-4",
+        "default": 3
+    },
+    "context_anchor_limit": {
+        "description": "上下文锚点数量上限",
+        "type": "int",
+        "hint": "仅保留最近N个目标用户发言作为对话块锚点，避免历史噪音过多",
+        "default": 120
+    },
+    "context_min_anchor_gap": {
+        "description": "锚点最小间隔",
+        "type": "int",
+        "hint": "目标连续高频发言时，间隔小于该值的锚点会被合并",
+        "default": 2
+    },
+    "context_relevance_min_score": {
+        "description": "群友消息相关性阈值",
+        "type": "int",
+        "hint": "候选群友消息分数低于该值时不纳入对话块",
+        "default": 6
+    },
+    "context_peer_per_block_limit": {
+        "description": "每块群友行上限",
+        "type": "int",
+        "hint": "每个对话块最多保留多少条相关群友发言",
+        "default": 8
+    },
+    "context_block_line_limit": {
+        "description": "每块总行数上限",
+        "type": "int",
+        "hint": "每个对话块最多保留多少条TURN（含目标与群友）",
+        "default": 16
+    },
+    "current_context_scan_count": {
+        "description": "当前消息扫描条数",
+        "type": "int",
+        "hint": "每次画像/取名时从最近群消息扫描多少条用于构建“当前消息”",
+        "default": 40
+    },
+    "current_context_line_limit": {
+        "description": "当前消息行数上限",
+        "type": "int",
+        "hint": "注入到提示词中的当前消息行数",
+        "default": 12
+    },
+    "current_context_keep_self": {
+        "description": "当前消息保留机器人发言",
+        "type": "bool",
+        "hint": "是否在“当前消息”中保留机器人自身发言",
+        "default": false
+    },
+    "include_image_summary": {
+        "description": "启用图片摘要注入",
+        "type": "bool",
+        "hint": "将消息中的图片摘要（如 vision_media 产出的描述）注入上下文；[动画表情] 会被忽略",
+        "default": true
+    },
+    "image_summary_max_len": {
+        "description": "图片摘要最大长度",
+        "type": "int",
+        "hint": "单条图片摘要最多保留字符数，避免过长占用 token",
+        "default": 200
+    },
+    "debug_preview_lines": {
+        "description": "调试日志预览行数",
+        "type": "int",
+        "hint": "每次画像请求在日志中打印前N行转录；设为0可关闭",
+        "default": 20
+    },
+    "dialogue_total_line_limit": {
+        "description": "历史对话总行数上限",
+        "type": "int",
+        "hint": "最终喂给LLM的历史对话最大行数",
+        "default": 800
+    },
+    "dialogue_target_line_limit": {
+        "description": "目标用户行数上限",
+        "type": "int",
+        "hint": "目标用户发言最多保留行数",
+        "default": 400
+    },
+    "dialogue_peer_line_limit": {
+        "description": "群友行数上限",
+        "type": "int",
+        "hint": "非目标用户发言最多保留行数",
+        "default": 400
+    },
+    "dialogue_command_line_limit": {
+        "description": "命令类发言上限",
+        "type": "int",
+        "hint": "以#或/开头的命令文本最多保留行数",
+        "default": 24
+    },
+    "render_text_max_chars": {
+        "description": "文转图最大字符数",
+        "type": "int",
+        "hint": "画像/取名合并卡片在文转图前会截断到该长度，避免超长文本导致渲染失败",
+        "default": 2200
+    },
+    "portrait_output_max_chars": {
+        "description": "画像正文最大字符数",
+        "type": "int",
+        "hint": "LLM 画像回复超过该长度时，会按完整段落压缩，避免文转图卡片截断。",
+        "default": 1500
+    },
+    "provider_id": {
+        "description": "画像插件使用的 Provider ID",
+        "type": "string",
+        "hint": "留空则使用当前默认 provider；填写后会固定使用指定 provider，例如 deepseek_v4_flash。",
+        "default": "deepseek_v4_flash"
+    },
+    "llm_model": {
+        "description": "画像插件使用的LLM模型",
+        "type": "string",
+        "hint": "会覆盖当前 provider 的默认模型，用于画像分析与取名生成。",
+        "default": "deepseek-flash"
+    },
+    "use_memchat_impression": {
+        "description": "优先注入 mem_chat 人物印象基准",
+        "type": "bool",
+        "hint": "开启后会从 mem_chat 数据库读取人物印象/关系倾向，作为画像与取名的基准提示词",
+        "default": true
+    },
+    "memchat_db_path": {
+        "description": "mem_chat 数据库路径",
+        "type": "string",
+        "hint": "留空时默认读取 ../astrbot_plugin_mem_chat/mem_chat_embeddings.db",
+        "default": ""
+    },
+    "prefer_memchat_history": {
+        "description": "优先使用 mem_chat 历史语料",
+        "type": "bool",
+        "hint": "开启后画像/取名会优先从 mem_chat 的语义化历史中召回上下文（含图片转写）。",
+        "default": true
+    },
+    "memchat_history_scan_limit": {
+        "description": "mem_chat 历史扫描上限",
+        "type": "int",
+        "hint": "从 mem_chat memory_embeddings 中最多扫描多少条历史用于参与式上下文构建。",
+        "default": 12000
+    },
+    "memchat_impression_max_chars": {
+        "description": "mem_chat基准注入最大字符数",
+        "type": "int",
+        "hint": "控制注入到画像/取名提示词中的 mem_chat 人物印象长度，避免过长浪费token",
+        "default": 1000
+    },
+    "system_prompt_template": {
+        "description": "系统提示词模板",
+        "type": "text",
+        "hint": "用于指导LLM分析群友的性格，请使用{nickname}和{gender}来表示群友的昵称和性别",
+        "default": "你是 ACG 角色设定师。请根据 {nickname} 的聊天记录分析{gender}的人设，并输出短版二次元风格画像。要求：1) 总字数 900-1300 中文字以内；2) 固定输出“角色印象一句话/萌点/雷点/口癖/社交定位/剧情定位”六段；3) 每段 1-2 条，证据用短句或概括，不要长篇引用；4) 活泼吐槽但不油腻，兼顾优缺点，避免纯夸。"
+    },
+    "id_prompt_template": {
+        "description": "取名指令的ID生成提示词模板",
+        "hint": "基于画像生成ID，建议输出格式：新ID：**<ID>**\\n理由：'<一句话理由>'",
+        "type": "text",
+        "default": "你是 ACG 取名师。请根据画像为该用户生成一个二次元风格群名片ID。要求：1) 2-36 字符；2) 允许多语言字符（无需限制语种）；3) 风格像昵称/代号，读起来顺口，有角色感；4) 不要使用低俗、攻击性、敏感词。请只输出以下格式：\\n新ID：**<ID>**\\n理由：'<一句话理由>'\\n不要输出多余内容。"
+    },
+    "id_max_len": {
+        "description": "取名指令生成ID的最大长度",
+        "type": "int",
+        "slider": {
+            "min": 2,
+            "max": 36,
+            "step": 1
+        },
+        "default": 36
+    }
+}

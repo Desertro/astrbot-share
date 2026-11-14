@@ -1,0 +1,10 @@
+{
+  "ntr_max": 99,
+  "ntr_possibility": 0.3,
+  "change_max_per_day": 3,
+  "reset_max_uses_per_day": 3,
+  "reset_success_rate": 0.3,
+  "reset_mute_duration": 30,
+  "image_base_url": "",
+  "swap_max_per_day": 2
+}

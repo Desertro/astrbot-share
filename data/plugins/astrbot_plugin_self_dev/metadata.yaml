@@ -1,0 +1,11 @@
+name: self_dev
+desc: 让机器人改自己的插件代码：先出 diff，管理员审批后热重载，失败自动回滚
+help: |
+  #dev <plugin> <需求>  让编码 agent 在副本上改
+  #dev ok <id>          应用到线上并热重载
+  #dev no <id>          丢弃
+  #dev undo <id>        撤销
+  #dev ls               最近任务
+version: v0.1.0
+author: dsh
+repo: 

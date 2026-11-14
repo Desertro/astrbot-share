@@ -1,0 +1,9 @@
+{
+  "default_zone": "K3A",
+  "broadcast_hour": 8,
+  "broadcast_enabled": true,
+  "broadcast_groups": [
+    "{{AB_QQ_2}}"
+  ],
+  "use_node_project": false
+}

@@ -1,0 +1,7 @@
+{
+  "refresh_sec": {
+    "description": "同一成员的等级/头衔多久刷新一次（秒）",
+    "type": "int",
+    "default": 21600
+  }
+}

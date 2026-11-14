@@ -1,0 +1,10 @@
+{
+  "max_video_size_mb": 50.0,
+  "max_gif_duration": 15.0,
+  "default_scale": 1.0,
+  "default_fps": 24,
+  "gif_max_colors": 256,
+  "gif_speed_min_frame_ms": 20,
+  "gif_speed_max_frames": 400,
+  "output_format": "GIF"
+}

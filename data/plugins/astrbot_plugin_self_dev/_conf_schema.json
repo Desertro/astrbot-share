@@ -1,0 +1,52 @@
+{
+  "admin_uids": {
+    "description": "允许发起改码的 QQ 号",
+    "type": "list",
+    "default": [],
+    "hint": "留空表示只认群管理员/群主。测试号可以临时加进来。"
+  },
+  "allowed_plugins": {
+    "description": "允许修改的插件目录名",
+    "type": "list",
+    "default": ["astrbot_plugin_selfdev_demo"],
+    "hint": "只允许改这些目录，其它一律拒绝。"
+  },
+  "coder_base_url": {
+    "description": "编码 agent 的 API 地址",
+    "type": "string",
+    "default": "",
+    "hint": "留空则复用 mem_chat 的 llm_base_url。"
+  },
+  "coder_api_key": {
+    "description": "编码 agent 的 API Key",
+    "type": "string",
+    "default": "",
+    "hint": "留空则复用 mem_chat 的 llm_api_key。"
+  },
+  "coder_model": {
+    "description": "编码 agent 的模型",
+    "type": "string",
+    "default": "deepseek-flash"
+  },
+  "coder_temperature": {
+    "description": "编码温度",
+    "type": "float",
+    "default": 0.2
+  },
+  "max_steps": {
+    "description": "编码 agent 最大步数",
+    "type": "int",
+    "default": 16,
+    "hint": "越大越能改复杂的东西，也越慢越贵。"
+  },
+  "max_diff_chars": {
+    "description": "落盘 diff 上限（字符）",
+    "type": "int",
+    "default": 12000
+  },
+  "max_diff_in_chat": {
+    "description": "聊天里展示的 diff 上限（字符）",
+    "type": "int",
+    "default": 1500
+  }
+}

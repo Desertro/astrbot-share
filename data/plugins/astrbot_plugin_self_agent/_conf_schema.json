@@ -1,0 +1,205 @@
+{
+  "admin_uids": {
+    "description": "允许使唤它去干活的 QQ 号（只有主人）",
+    "type": "list",
+    "default": [
+      "{{AB_QQ_1}}"
+    ]
+  },
+  "nl_enabled": {
+    "description": "自然语言入口：@她 说事就干活",
+    "type": "bool",
+    "default": true
+  },
+  "private_nl_enabled": {
+    "description": "私聊自然语言自动跑腿：仅主人生效；明确任务交给 Codex，普通聊天仍交给 mem_chat",
+    "type": "bool",
+    "default": false
+  },
+  "ack_text": {
+    "description": "接到活时先回的一句（留空不回）",
+    "type": "string",
+    "default": "好，我去看看。"
+  },
+  "backend": {
+    "description": "后端：auto=Codex→DSH→内置；codex=只用 Codex；dsh=只用 DSH；builtin=内置小 agent",
+    "type": "string",
+    "default": "codex",
+    "options": [
+      "auto",
+      "codex",
+      "dsh",
+      "builtin"
+    ]
+  },
+  "workdir": {
+    "description": "agent 的工作目录（留空=AstrBot 根目录）",
+    "type": "string",
+    "default": ""
+  },
+  "dsh_cmd": {
+    "description": "dsh 启动命令（backend=dsh/auto 时使用）",
+    "type": "string",
+    "default": "{{AB_SELF_AGENT_DSH_CMD}}"
+  },
+  "codex_cmd": {
+    "description": "Codex CLI 启动命令（backend=codex/auto 时使用）",
+    "type": "string",
+    "default": "{{AB_SELF_AGENT_CODEX_CMD}}"
+  },
+  "codex_model": {
+    "description": "Codex 使用的模型 ID（ds4.1f = deepseek-v4.1-flash）",
+    "type": "string",
+    "default": "deepseek-v4.1-flash"
+  },
+  "codex_home": {
+    "description": "Codex 独立配置目录（需包含 config.toml/auth.json，并可由 run_as_user 读写）",
+    "type": "string",
+    "default": "{{AB_SELF_AGENT_CODEX_HOME}}"
+  },
+  "codex_sandbox": {
+    "description": "Codex 沙箱：workspace-write=只可写工作区；read-only=只读；danger-full-access=危险",
+    "type": "string",
+    "default": "workspace-write",
+    "options": [
+      "read-only",
+      "workspace-write",
+      "danger-full-access"
+    ]
+  },
+  "codex_ephemeral": {
+    "description": "每次任务不保存 Codex 会话，避免会话文件持续膨胀",
+    "type": "bool",
+    "default": true
+  },
+  "codex_add_dirs": {
+    "description": "Codex 额外可写目录（一般留空；填 /run/qqctl 会触发它的 .git 挂载检查）",
+    "type": "list",
+    "default": []
+  },
+  "codex_network_access": {
+    "description": "允许 Codex 沙箱内进程联网/连接 Unix socket（qqctl 必需）",
+    "type": "bool",
+    "default": true
+  },
+  "codex_clear_proxy": {
+    "description": "Codex 子进程直连模型，忽略 AstrBot 继承的 HTTP(S)_PROXY",
+    "type": "bool",
+    "default": true
+  },
+  "use_agents_md": {
+    "description": "让 agent 自己读 AGENTS.md；没有爱丽丝专用 AGENTS.md 时关闭，改为内联 AstrBot 人设",
+    "type": "bool",
+    "default": false
+  },
+  "node_bin_dir": {
+    "description": "Node 22 的 bin 目录（给 dsh 子进程用，留空=继承 PATH）",
+    "type": "string",
+    "default": "{{AB_SELF_AGENT_NODE_BIN_DIR}}"
+  },
+  "timeout_sec": {
+    "description": "dsh 后端超时（秒）",
+    "type": "int",
+    "default": 240
+  },
+  "max_steps": {
+    "description": "内置 agent 最大步数",
+    "type": "int",
+    "default": 10
+  },
+  "answer_max_chars": {
+    "description": "回复长度上限（字符）",
+    "type": "int",
+    "default": 900
+  },
+  "coder_base_url": {
+    "description": "模型地址（留空复用 mem_chat）",
+    "type": "string",
+    "default": ""
+  },
+  "coder_api_key": {
+    "description": "模型 Key（留空复用 mem_chat）",
+    "type": "string",
+    "default": ""
+  },
+  "coder_model": {
+    "description": "模型名",
+    "type": "string",
+    "default": "deepseek-flash"
+  },
+  "coder_temperature": {
+    "description": "温度",
+    "type": "float",
+    "default": 0.2
+  },
+  "snapshot": {
+    "description": "每次干活前给插件源码拍快照（关掉就没法回滚）",
+    "type": "bool",
+    "default": true
+  },
+  "snapshot_dir": {
+    "description": "快照目录（默认 data/plugin_data/self_agent/snapshots，不要放 /tmp，重启会清空）",
+    "type": "string",
+    "default": ""
+  },
+  "snapshot_keep": {
+    "description": "保留多少个快照（超出的从最旧开始删）",
+    "type": "int",
+    "default": 10
+  },
+  "protect_plugin_code": {
+    "description": "保护插件源码：让 agent 在独立工作区里跑，它就改不了自己的代码（改代码走 #dev 审批）",
+    "type": "bool",
+    "default": true
+  },
+  "agent_workspace": {
+    "description": "agent 的可写工作区（留空={{USER_HOME}}/alice/workspace）",
+    "type": "string",
+    "default": ""
+  },
+  "dsh_permission_mode": {
+    "description": "DSH 沙箱模式：workspace-write=可写工作区与临时目录；read-only=完全只读（连 /tmp 都不能写）",
+    "type": "string",
+    "default": "workspace-write",
+    "options": [
+      "workspace-write",
+      "read-only",
+      "danger-full-access"
+    ]
+  },
+  "run_as_user": {
+    "description": "agent 以哪个系统用户运行（留空=跟 AstrBot 同身份）。设为 aris 可让它读不到 NapCat token",
+    "type": "string",
+    "default": ""
+  },
+  "drop_helper": {
+    "description": "降权用的小工具（带 CAP_SETUID），留空或找不到时 agent 保持 AstrBot 身份",
+    "type": "string",
+    "default": "drop2aris"
+  },
+  "schedule_quota_per_user": {
+    "type": "int",
+    "default": 3,
+    "description": "每个群友最多能让爱丽丝记几个定时提醒"
+  },
+  "idle_chat_enabled": {
+    "type": "bool",
+    "default": true,
+    "description": "让爱丽丝每天挑几个时间点自己看群里气氛，决定要不要主动说句话"
+  },
+  "idle_chat_groups": {
+    "type": "list",
+    "default": [],
+    "description": "允许她主动冒泡的群号；留空就不冒泡"
+  },
+  "self_followup_enabled": {
+    "type": "bool",
+    "default": true,
+    "description": "有人说去吃饭/睡觉时，让她自己记着过会儿问一句"
+  },
+  "meme_save_min_affinity": {
+    "type": "int",
+    "default": 30,
+    "description": "好感度到多少才能让她存表情（超管不受限）"
+  }
+}

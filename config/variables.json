@@ -1,0 +1,676 @@
+{
+  "AB_CMD_PROVIDER_SOURCES_0_KEY_0": {
+    "category": "secret",
+    "secret": true,
+    "required": true,
+    "default": "",
+    "locations": [
+      "data/cmd_config.json.provider_sources.0.key.0"
+    ]
+  },
+  "AB_CMD_PROVIDER_SOURCES_0_API_BASE": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "https://127.0.0.1/v1/",
+    "locations": [
+      "data/cmd_config.json.provider_sources.0.api_base"
+    ]
+  },
+  "AB_CMD_PROVIDER_SOURCES_1_KEY_0": {
+    "category": "secret",
+    "secret": true,
+    "required": true,
+    "default": "",
+    "locations": [
+      "data/cmd_config.json.provider_sources.1.key.0"
+    ]
+  },
+  "AB_CMD_PROVIDER_SOURCES_1_API_BASE": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "https://127.0.0.1/",
+    "locations": [
+      "data/cmd_config.json.provider_sources.1.api_base"
+    ]
+  },
+  "AB_CMD_PROVIDER_SOURCES_2_KEY_0": {
+    "category": "secret",
+    "secret": true,
+    "required": true,
+    "default": "",
+    "locations": [
+      "data/cmd_config.json.provider_sources.2.key.0",
+      "data/config/astrbot_plugin_mem_chat_config.json.llm_fallback.api_key"
+    ]
+  },
+  "AB_CMD_PROVIDER_SOURCES_2_API_BASE": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "https://127.0.0.1",
+    "locations": [
+      "data/cmd_config.json.provider_sources.2.api_base",
+      "data/config/astrbot_plugin_mem_chat_config.json.llm_fallback.base_url"
+    ]
+  },
+  "AB_CMD_PROVIDER_2_API_BASE": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "http://127.0.0.1:9880",
+    "locations": [
+      "data/cmd_config.json.provider.2.api_base"
+    ]
+  },
+  "AB_CMD_PROVIDER_2_GPT_WEIGHTS_PATH": {
+    "category": "path",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/cmd_config.json.provider.2.gpt_weights_path"
+    ]
+  },
+  "AB_CMD_PROVIDER_2_SOVITS_WEIGHTS_PATH": {
+    "category": "path",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/cmd_config.json.provider.2.sovits_weights_path"
+    ]
+  },
+  "AB_CMD_PROVIDER_2_GSV_DEFAULT_PARMS_GSV_REF_AUDIO_PATH": {
+    "category": "path",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/cmd_config.json.provider.2.gsv_default_parms.gsv_ref_audio_path"
+    ]
+  },
+  "AB_CMD_PROVIDER_SETTINGS_WEBSEARCH_TAVILY_KEY_0": {
+    "category": "secret",
+    "secret": true,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/cmd_config.json.provider_settings.websearch_tavily_key.0"
+    ]
+  },
+  "AB_QQ_1": {
+    "category": "basic",
+    "secret": false,
+    "required": true,
+    "default": "",
+    "locations": [
+      "data/cmd_config.json.admins_id.2",
+      "data/config/astrbot_plugin_capability_agent_config.json.admin_uids.0",
+      "data/config/astrbot_plugin_mem_chat_config.json.private_chat_uids.0",
+      "data/config/astrbot_plugin_mem_chat_config.json.adult_private_uids.0",
+      "data/config/astrbot_plugin_mem_chat_config.json.codex_allowed_uids.0",
+      "data/config/astrbot_plugin_meme_kb_config.json.admin_uids.0",
+      "data/config/astrbot_plugin_self_agent_config.json.admin_uids.0",
+      "data/config/astrbot_plugin_self_dev_config.json.admin_uids.0",
+      "identity.value"
+    ]
+  },
+  "AB_CMD_LOG_FILE_PATH": {
+    "category": "path",
+    "secret": false,
+    "required": false,
+    "default": "{{ASTRBOT_ROOT}}/logs/astrbot.log",
+    "locations": [
+      "data/cmd_config.json.log_file_path"
+    ]
+  },
+  "AB_ARK_SEARCH_API_KEY": {
+    "category": "secret",
+    "secret": true,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_ark_search_config.json.api_key"
+    ]
+  },
+  "AB_ARK_SEARCH_BASE_URL": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "https://127.0.0.1/api/v3/responses",
+    "locations": [
+      "data/config/astrbot_plugin_ark_search_config.json.base_url"
+    ]
+  },
+  "AB_CAPABILITY_AGENT_ANIMA_COMFY_URL": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "http://127.0.0.1:8188",
+    "locations": [
+      "data/config/astrbot_plugin_capability_agent_config.json.anima_comfy_url"
+    ]
+  },
+  "AB_COLG_KNOWLEDGE_CONFIRM_TOKEN": {
+    "category": "secret",
+    "secret": true,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_colg_knowledge_config.json.confirm_token"
+    ]
+  },
+  "AB_QQ_2": {
+    "category": "identity",
+    "secret": false,
+    "required": true,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_colg_knowledge_config.json.group_whitelist.0",
+      "data/config/astrbot_plugin_dnf_gold_config.json.broadcast_groups.0",
+      "data/config/astrbot_plugin_dogdiary_config.json.dogdiary_auto_send_groups.0",
+      "data/config/astrbot_plugin_mem_chat_config.json.group_whitelist.0",
+      "data/config/astrbot_plugin_mem_chat_config.json.vision_chat_groups.1",
+      "data/config/astrbot_plugin_mem_chat_config.json.group_frequency_overrides.{{AB_QQ_2}}",
+      "data/config/astrbot_plugin_mem_scheduler_config.json.seed_jobs.0.target_umo",
+      "data/config/astrbot_plugin_rss_config.json.rsshub_whitelist_sessions.2",
+      "data/config/astrbot_plugin_shoubanhua_config.json.group_whitelist.0",
+      "data/config/astrbot_plugin_vision_media_config.json.vision_essence_group_whitelist.0",
+      "data/config/astrbot_plugin_vision_media_config.json.vision_essence_cleanup_group_whitelist.0",
+      "data/config/astrbot_plugin_x_anime_push_test_config.json.target_umo",
+      "identity.value",
+      "identity.map_key"
+    ]
+  },
+  "AB_FIGURINE_WORKSHOP_API_BASE_URL": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "https://127.0.0.1",
+    "locations": [
+      "data/config/astrbot_plugin_figurine_workshop_config.json.api_base_url",
+      "data/config/astrbot_plugin_gemini2point5image_openrouter_config.json.custom_api_base"
+    ]
+  },
+  "AB_IMG_REV_SEARCHER_PROXIES": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "http://127.0.0.1:7899",
+    "locations": [
+      "data/config/astrbot_plugin_img_rev_searcher_config.json.proxies",
+      "data/config/astrbot_plugin_shoubanhua_config.json.proxy_url"
+    ]
+  },
+  "AB_IMG_REV_SEARCHER_DEFAULT_PARAMS_SAUCENAO_API_KEY": {
+    "category": "secret",
+    "secret": true,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_img_rev_searcher_config.json.default_params.saucenao.api_key"
+    ]
+  },
+  "AB_IMGEXPLORATION_NETWORK_PROXY_URL": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "http://127.0.0.1:7897",
+    "locations": [
+      "data/config/astrbot_plugin_imgexploration_config.json.network.proxy_url"
+    ]
+  },
+  "AB_IMGEXPLORATION_API_KEYS_SEARCHAPI_KEYS_0": {
+    "category": "secret",
+    "secret": true,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_imgexploration_config.json.api_keys.searchapi_keys.0"
+    ]
+  },
+  "AB_QQ_3": {
+    "category": "identity",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.group_persona_overrides.{{AB_QQ_3}}",
+      "data/config/astrbot_plugin_mem_chat_config.json.group_whitelist.9",
+      "data/config/astrbot_plugin_mem_chat_config.json.adult_group_whitelist.2",
+      "identity.map_key",
+      "identity.value"
+    ]
+  },
+  "AB_MEM_CHAT_CUSTOM_LLM_BASE_URL": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "https://127.0.0.1/",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.custom_llm_base_url"
+    ]
+  },
+  "AB_MEM_CHAT_CUSTOM_LLM_API_KEY": {
+    "category": "secret",
+    "secret": true,
+    "required": true,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.custom_llm_api_key"
+    ]
+  },
+  "AB_MEM_CHAT_LLM_BASE_URL": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "https://127.0.0.1/v1",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.llm_base_url",
+      "data/config/astrbot_plugin_mem_chat_config.json.meme_vision.base_url"
+    ]
+  },
+  "AB_MEM_CHAT_LLM_API_KEY": {
+    "category": "secret",
+    "secret": true,
+    "required": true,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.llm_api_key",
+      "data/config/astrbot_plugin_mem_chat_config.json.meme_vision.api_key",
+      "data/config/astrbot_plugin_mem_chat_config.json.meme_vision.fallback_api_key",
+      "data/config/astrbot_plugin_vision_media_config.json.vision_llm.api_key"
+    ]
+  },
+  "AB_QQ_4": {
+    "category": "identity",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.group_whitelist.1",
+      "data/config/astrbot_plugin_mem_chat_config.json.group_frequency_overrides.{{AB_QQ_4}}",
+      "data/config/astrbot_plugin_mem_scheduler_config.json.seed_jobs.1.target_umo",
+      "data/config/astrbot_plugin_shoubanhua_config.json.group_whitelist.4",
+      "identity.value",
+      "identity.map_key"
+    ]
+  },
+  "AB_QQ_5": {
+    "category": "identity",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.group_whitelist.2",
+      "data/config/astrbot_plugin_mem_scheduler_config.json.seed_jobs.2.target_umo",
+      "data/config/astrbot_plugin_shoubanhua_config.json.group_whitelist.2",
+      "identity.value"
+    ]
+  },
+  "AB_QQ_6": {
+    "category": "identity",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.group_whitelist.3",
+      "data/config/astrbot_plugin_mem_chat_config.json.adult_group_whitelist.0",
+      "data/config/astrbot_plugin_mem_chat_config.json.vision_chat_groups.2",
+      "data/config/astrbot_plugin_mem_scheduler_config.json.seed_jobs.3.target_umo",
+      "data/config/astrbot_plugin_rss_config.json.rsshub_whitelist_sessions.1",
+      "data/config/astrbot_plugin_shoubanhua_config.json.group_whitelist.1",
+      "identity.value"
+    ]
+  },
+  "AB_QQ_7": {
+    "category": "identity",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.group_whitelist.4",
+      "data/config/astrbot_plugin_mem_scheduler_config.json.seed_jobs.4.target_umo",
+      "data/config/astrbot_plugin_rss_config.json.rsshub_whitelist_sessions.3",
+      "identity.value"
+    ]
+  },
+  "AB_QQ_8": {
+    "category": "identity",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.group_whitelist.5",
+      "data/config/astrbot_plugin_mem_chat_config.json.adult_group_whitelist.1",
+      "data/config/astrbot_plugin_mem_scheduler_config.json.seed_jobs.5.target_umo",
+      "data/config/astrbot_plugin_rss_config.json.rsshub_whitelist_sessions.0",
+      "data/config/astrbot_plugin_self_agent_config.json.idle_chat_groups.0",
+      "data/config/astrbot_plugin_shoubanhua_config.json.group_whitelist.3",
+      "data/config/astrbot_plugin_vision_media_config.json.vision_essence_group_whitelist.1",
+      "identity.value"
+    ]
+  },
+  "AB_QQ_9": {
+    "category": "identity",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.group_whitelist.6",
+      "data/config/astrbot_plugin_mem_chat_config.json.group_frequency_overrides.{{AB_QQ_9}}",
+      "data/config/astrbot_plugin_mem_scheduler_config.json.seed_jobs.6.target_umo",
+      "data/config/astrbot_plugin_shoubanhua_config.json.group_whitelist.5",
+      "identity.value",
+      "identity.map_key"
+    ]
+  },
+  "AB_QQ_10": {
+    "category": "identity",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.group_whitelist.7",
+      "data/config/astrbot_plugin_mem_chat_config.json.vision_chat_groups.0",
+      "data/config/astrbot_plugin_mem_chat_config.json.group_frequency_overrides.{{AB_QQ_10}}",
+      "data/config/astrbot_plugin_shoubanhua_config.json.group_whitelist.6",
+      "identity.value",
+      "identity.map_key"
+    ]
+  },
+  "AB_QQ_11": {
+    "category": "identity",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.group_whitelist.8",
+      "data/config/astrbot_plugin_shoubanhua_config.json.group_whitelist.7",
+      "identity.value"
+    ]
+  },
+  "AB_QQ_12": {
+    "category": "identity",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.private_chat_uids.1",
+      "data/config/astrbot_plugin_mem_chat_config.json.adult_private_uids.1",
+      "data/config/astrbot_plugin_mem_chat_config.json.codex_allowed_uids.1",
+      "data/config/astrbot_plugin_meme_kb_config.json.admin_uids.1",
+      "data/config/astrbot_plugin_napcat_debug_config.json.test_qq_account",
+      "data/config/astrbot_plugin_self_agent_config.json.admin_uids.1",
+      "data/config/astrbot_plugin_self_dev_config.json.admin_uids.1",
+      "identity.value"
+    ]
+  },
+  "AB_QQ_13": {
+    "category": "identity",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.private_chat_uids.2",
+      "data/config/astrbot_plugin_mem_chat_config.json.adult_private_uids.2",
+      "identity.value"
+    ]
+  },
+  "AB_MEM_CHAT_EMBEDDING_OPENAI_BASE_URL": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "https://127.0.0.1/v1",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.embedding_openai_base_url"
+    ]
+  },
+  "AB_MEM_CHAT_EMBEDDING_OPENAI_API_KEY": {
+    "category": "secret",
+    "secret": true,
+    "required": true,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.embedding_openai_api_key"
+    ]
+  },
+  "AB_MEM_CHAT_MEME_VISION_FALLBACK_BASE_URL": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "https://127.0.0.1",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.meme_vision.fallback_base_url",
+      "data/config/astrbot_plugin_vision_media_config.json.vision_llm.base_url"
+    ]
+  },
+  "AB_MEME_MANAGER_IMAGE_HOST_CONFIG_STARDOTS_KEY": {
+    "category": "secret",
+    "secret": true,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_meme_manager_config.json.image_host_config.stardots.key"
+    ]
+  },
+  "AB_MEME_MANAGER_IMAGE_HOST_CONFIG_STARDOTS_SECRET": {
+    "category": "secret",
+    "secret": true,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_meme_manager_config.json.image_host_config.stardots.secret"
+    ]
+  },
+  "AB_MNEMOSYNE_ADDRESS": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "http://localhost:19530",
+    "locations": [
+      "data/config/astrbot_plugin_mnemosyne_config.json.address"
+    ]
+  },
+  "AB_PARSER_DATA_DIR": {
+    "category": "path",
+    "secret": false,
+    "required": false,
+    "default": "{{ASTRBOT_ROOT}}/data/plugin_data/astrbot_plugin_parser",
+    "locations": [
+      "data/config/astrbot_plugin_parser_config.json.data_dir"
+    ]
+  },
+  "AB_PARSER_CACHE_DIR": {
+    "category": "path",
+    "secret": false,
+    "required": false,
+    "default": "{{ASTRBOT_ROOT}}/data/plugin_data/astrbot_plugin_parser/cache_dir",
+    "locations": [
+      "data/config/astrbot_plugin_parser_config.json.cache_dir"
+    ]
+  },
+  "AB_RSS_DEFAULT_RSSHUB_ENDPOINT": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "http://localhost:1200",
+    "locations": [
+      "data/config/astrbot_plugin_rss_config.json.default_rsshub_endpoint"
+    ]
+  },
+  "AB_SELF_AGENT_DSH_CMD": {
+    "category": "path",
+    "secret": false,
+    "required": false,
+    "default": "dsh --profile headless",
+    "locations": [
+      "data/config/astrbot_plugin_self_agent_config.json.dsh_cmd"
+    ]
+  },
+  "AB_SELF_AGENT_CODEX_CMD": {
+    "category": "path",
+    "secret": false,
+    "required": false,
+    "default": "codex",
+    "locations": [
+      "data/config/astrbot_plugin_self_agent_config.json.codex_cmd"
+    ]
+  },
+  "AB_SELF_AGENT_CODEX_HOME": {
+    "category": "path",
+    "secret": false,
+    "required": false,
+    "default": "{{USER_HOME}}/.codex",
+    "locations": [
+      "data/config/astrbot_plugin_self_agent_config.json.codex_home"
+    ]
+  },
+  "AB_SELF_AGENT_NODE_BIN_DIR": {
+    "category": "path",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_self_agent_config.json.node_bin_dir"
+    ]
+  },
+  "AB_SHOUBANHUA_API_KEYS_0": {
+    "category": "secret",
+    "secret": true,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_shoubanhua_config.json.api_keys.0"
+    ]
+  },
+  "AB_SHOUBANHUA_BACKUP_API_KEYS_0": {
+    "category": "secret",
+    "secret": true,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_shoubanhua_config.json.backup_api_keys.0",
+      "data/config/astrbot_plugin_vision_media_config.json.vision_llm.fallback_api_key"
+    ]
+  },
+  "AB_VISION_MEDIA_VISION_LLM_FALLBACK_BASE_URL": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "https://127.0.0.1",
+    "locations": [
+      "data/config/astrbot_plugin_vision_media_config.json.vision_llm.fallback_base_url"
+    ]
+  },
+  "AB_ZIMAGE_LOCAL_LOCAL_ZIMAGE_URL": {
+    "category": "service",
+    "secret": false,
+    "required": false,
+    "default": "http://127.0.0.1:8809/zimage/generate",
+    "locations": [
+      "data/config/astrbot_plugin_zimage_local_config.json.local_zimage_url"
+    ]
+  },
+  "AB_DASHBOARD_USERNAME": {
+    "category": "basic",
+    "secret": false,
+    "required": true,
+    "default": "astrbot",
+    "locations": [
+      "dashboard.username"
+    ]
+  },
+  "AB_DASHBOARD_PASSWORD": {
+    "category": "basic",
+    "secret": true,
+    "required": true,
+    "default": "",
+    "locations": [
+      "dashboard.password (generated hash)"
+    ]
+  },
+  "AB_ONEBOT_TOKEN": {
+    "category": "basic",
+    "secret": true,
+    "required": true,
+    "default": "",
+    "locations": [
+      "platform.ws_reverse_token"
+    ]
+  },
+  "AB_GEMINI2POINT5IMAGE_OPENROUTER_GEMINI_API_KEYS_0": {
+    "category": "secret",
+    "secret": true,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_gemini2point5image_openrouter_config.json.gemini_api_keys.0"
+    ]
+  },
+  "AB_GEMINI2POINT5IMAGE_OPENROUTER_GEMINI_API_KEYS_1": {
+    "category": "secret",
+    "secret": true,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_gemini2point5image_openrouter_config.json.gemini_api_keys.1"
+    ]
+  },
+  "AB_PARSER_DOUYIN_CK": {
+    "category": "secret",
+    "secret": true,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_parser_config.json.douyin_ck"
+    ]
+  },
+  "AB_PARSER_PIXIV_CK": {
+    "category": "secret",
+    "secret": true,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_parser_config.json.pixiv_ck"
+    ]
+  },
+  "AB_MEM_CHAT_CODEX_CLI_PATH": {
+    "category": "path",
+    "secret": false,
+    "required": false,
+    "default": "codex",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.codex_cli_path"
+    ]
+  },
+  "AB_MEM_CHAT_CODEX_WORKDIR": {
+    "category": "path",
+    "secret": false,
+    "required": false,
+    "default": "{{ASTRBOT_ROOT}}",
+    "locations": [
+      "data/config/astrbot_plugin_mem_chat_config.json.codex_workdir"
+    ]
+  },
+  "AB_CAPABILITY_AGENT_ANIMA_WINDOWS_PYTHON": {
+    "category": "path",
+    "secret": false,
+    "required": false,
+    "default": "",
+    "locations": [
+      "data/config/astrbot_plugin_capability_agent_config.json.anima_windows_python"
+    ]
+  },
+  "AB_CAPABILITY_AGENT_ANIMA_WORKFLOW": {
+    "category": "path",
+    "secret": false,
+    "required": false,
+    "default": "{{ASTRBOT_ROOT}}/data/plugin_data/astrbot_plugin_capability_agent/anima/workflow.json",
+    "locations": [
+      "data/config/astrbot_plugin_capability_agent_config.json.anima_workflow"
+    ]
+  }
+}

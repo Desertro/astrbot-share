@@ -1,0 +1,15 @@
+
+.kilocode/
+.kiro/
+.vscode/
+src/analysis/ARCHITECTURE.md
+.serena/.gitignore
+.serena/project.yml
+debug_output.html
+**/__pycache__
+data/cmd_config.json
+data/t2i_templates/astrbot_powershell.html
+data/t2i_templates/base.html
+.sisyphus/
+data/plugin_data/astrbot_plugin_qq_group_daily_analysis/cache/avatars/123456789_40.jpg
+data/plugin_data/astrbot_plugin_qq_group_daily_analysis/cache/avatars/987654321_40.jpg
